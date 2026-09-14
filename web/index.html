@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>EverGuard | Keenan Miller Technology Solutions + Joe CXO</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#191919; --ink:#ececec; --mut:rgba(236,236,236,.6); --mut2:rgba(236,236,236,.82);
+    --org:#ff6a00; --org-deep:#cc4e00; --div:rgba(236,236,236,.14); --card:#202020;
+  }
+  *{box-sizing:border-box}
+  html,body{max-width:100%;overflow-x:hidden}
+  main,header,footer{min-width:0}
+  body{
+    margin:0; min-height:100vh; background:radial-gradient(1500px 950px at 70% 6%,#232323 0%,#191919 60%);
+    color:var(--ink); font-family:"Montserrat",system-ui,-apple-system,sans-serif;
+    display:flex; flex-direction:column;
+  }
+  .slash{position:fixed;right:0;bottom:0;width:300px;height:300px;pointer-events:none;opacity:.85;
+    clip-path:polygon(100% 100%,100% 0,0 100%);
+    background:linear-gradient(315deg,#2b2b2b 0 10%,#202020 10% 20%,var(--org) 20% 21.8%,#2e2e2e 21.8% 32%,rgba(255,106,0,.4) 32% 33%,#222 33% 42%,transparent 42%)}
+  header{padding:44px 7vw 0;position:relative;z-index:1}
+  .brand{font-family:"Orbitron",sans-serif;font-weight:800;letter-spacing:.06em;font-size:clamp(17px,2.2vw,22px)}
+  .brand b{color:var(--org);font-weight:800}
+  .partners{margin-top:10px;font-size:clamp(9.5px,1.2vw,12px);letter-spacing:.14em;color:var(--mut);text-transform:uppercase;overflow-wrap:break-word}
+  main{flex:1;padding:6vh 7vw 40px;position:relative;z-index:1}
+  h1{font-family:"Orbitron",sans-serif;font-weight:700;font-size:clamp(22px,4.4vw,46px);line-height:1.14;margin:0 0 12px;overflow-wrap:break-word}
+  h1 span{color:var(--org)}
+  .lede{color:var(--mut2);max-width:60ch;font-size:clamp(14px,1.6vw,17px);line-height:1.6;margin:0 0 40px}
+  .cards{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));max-width:1100px}
+  .card{background:var(--card);border:1px solid var(--div);border-radius:4px;padding:26px 24px 22px;
+    display:flex;flex-direction:column;gap:10px;text-decoration:none;color:inherit;position:relative;
+    transition:border-color .18s ease,transform .18s ease}
+  a.card:hover{border-color:var(--org);transform:translateY(-2px)}
+  .num{font-family:"Orbitron",sans-serif;font-size:12px;letter-spacing:.2em;color:var(--org)}
+  .card h2{font-family:"Orbitron",sans-serif;font-weight:700;font-size:19px;margin:2px 0 0;letter-spacing:.02em}
+  .card p{margin:0;color:var(--mut);font-size:14px;line-height:1.55}
+  .tag{margin-top:auto;padding-top:16px;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+  .live .tag{color:var(--org)}
+  .soon{opacity:.62}
+  .soon .tag{color:var(--mut)}
+  .soon h2{color:var(--mut2)}
+  footer{padding:0 7vw 34px;color:var(--mut);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;position:relative;z-index:1}
+  @media (max-width:640px){ .slash{width:180px;height:180px} header{padding-top:30px} }
+</style>
+</head>
+<body>
+<div class="slash" aria-hidden="true"></div>
+
+<header>
+  <div class="brand">EVER<b>GUARD</b></div>
+  <div class="partners">Keenan Miller Technology Solutions &nbsp;|&nbsp; Joe CXO</div>
+</header>
+
+<main>
+  <h1>Prepared for <span>Chris Calderon</span></h1>
+  <p class="lede">Three pieces. The deck is ready now. The agreement and the
+  demo follow.</p>
+
+  <div class="cards">
+    <a class="card live" href="./deck/">
+      <div class="num">01</div>
+      <h2>Partnership deck</h2>
+      <p>The case, the two seats, and how the work runs. Seven slides.</p>
+      <div class="tag">Open the deck</div>
+    </a>
+
+    <div class="card soon">
+      <div class="num">02</div>
+      <h2>The agreement</h2>
+      <p>Scope, terms, and what each side owns. The version that goes to a
+      lawyer.</p>
+      <div class="tag">Coming soon</div>
+    </div>
+
+    <div class="card soon">
+      <div class="num">03</div>
+      <h2>The demo</h2>
+      <p>Something you can click, built around your fleet and your colors. Not
+      a screenshot of somebody else's work.</p>
+      <div class="tag">Coming soon</div>
+    </div>
+  </div>
+</main>
+
+<footer>Private. Prepared for Chris Calderon. Not for distribution.</footer>
+</body>
+</html>
