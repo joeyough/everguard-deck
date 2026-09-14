@@ -4,24 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow, noarchive">
-<title>EverGuard | Technology Partnership Proposal</title>
+<title>EverGuard | Partnership Agreement</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#191919; --paper:#1e1e1e; --ink:#ececec; --mut:rgba(236,236,236,.62);
+    --bg:#191919; --paper:#1e1e1e; --paper2:#232323; --ink:#ececec; --mut:rgba(236,236,236,.62);
     --mut2:rgba(236,236,236,.84); --org:#ff6a00; --org-deep:#cc4e00;
-    --div:rgba(236,236,236,.14); --line:rgba(236,236,236,.09);
+    --div:rgba(236,236,236,.14); --line:rgba(236,236,236,.08);
   }
   *{box-sizing:border-box}
-  html,body{margin:0;padding:0;max-width:100%;overflow-x:hidden}
-  body{background:radial-gradient(1500px 950px at 70% 4%,#232323 0%,#191919 60%);
+  html,body{margin:0;padding:0;max-width:100%;overflow-x:hidden;scroll-behavior:smooth}
+  body{background:radial-gradient(1500px 950px at 72% 3%,#232323 0%,#191919 58%);
     color:var(--ink);font-family:"Montserrat",system-ui,-apple-system,sans-serif;
     font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:900px;margin:0 auto;padding:0 24px 80px}
-  h1,h2,h3,.mark,.tier-name,.price,.num{font-family:"Orbitron",sans-serif}
+  .wrap{max-width:940px;margin:0 auto;padding:0 24px 90px}
+  h1,h2,h3,.mark,.tier-name,.price,.num,.who,.step-n,.pill,.dl{font-family:"Orbitron",sans-serif}
 
-  /* masthead */
-  header{border-bottom:1px solid var(--div);padding:38px 0 26px;margin-bottom:44px;position:relative}
+  header{border-bottom:1px solid var(--div);padding:38px 0 26px;margin-bottom:14px;position:relative}
   header:after{content:"";position:absolute;left:0;bottom:-1px;width:92px;height:2px;background:var(--org)}
   .mark{font-weight:800;letter-spacing:.06em;font-size:20px}
   .mark b{color:var(--org)}
@@ -31,81 +30,123 @@
   .period{margin-top:18px;font-size:14px;color:var(--mut2)}
   .period b{color:var(--ink);font-weight:600}
 
-  /* sections */
-  section{margin:0 0 52px}
+  /* toolbar */
+  .bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:16px 0 30px;
+    border-bottom:1px solid var(--line);margin-bottom:44px}
+  .dl{display:inline-flex;align-items:center;gap:9px;background:var(--org);color:#141414;
+    text-decoration:none;padding:11px 16px;border-radius:3px;font-weight:800;font-size:11.5px;
+    letter-spacing:.13em;text-transform:uppercase}
+  .dl:hover{background:#ff8a33}
+  .dl.ghost{background:transparent;color:var(--mut2);border:1px solid var(--div)}
+  .dl.ghost:hover{border-color:var(--org);color:var(--ink)}
+
+  section{margin:0 0 56px;scroll-margin-top:20px}
   h2{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--org);
-    font-weight:700;margin:0 0 16px;display:flex;align-items:center;gap:12px}
+    font-weight:700;margin:0 0 18px;display:flex;align-items:center;gap:12px}
   h2:after{content:"";flex:1;height:1px;background:var(--line)}
-  h3{font-size:17px;font-weight:700;margin:0 0 8px;letter-spacing:.01em}
-  p{margin:0 0 14px;color:var(--mut2);max-width:72ch}
+  h3{font-size:16.5px;font-weight:700;margin:0 0 8px}
+  p{margin:0 0 14px;color:var(--mut2);max-width:74ch}
   .lead{font-size:17px;line-height:1.6;color:var(--ink)}
   ul{margin:0 0 14px;padding:0;list-style:none}
   li{position:relative;padding-left:20px;margin-bottom:9px;color:var(--mut2)}
   li:before{content:"";position:absolute;left:0;top:.62em;width:7px;height:1px;background:var(--org)}
 
-  /* the two seats */
-  .seats{display:grid;gap:2px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  .seats{display:grid;gap:2px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
     background:var(--line);border:1px solid var(--line)}
-  .seat{background:var(--paper);padding:24px 22px}
-  .seat .who{font-family:"Orbitron",sans-serif;font-weight:800;font-size:14px;letter-spacing:.08em}
-  .seat .role{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--org);margin:6px 0 12px}
-  .seat p{margin:0;font-size:14px}
-  .oneteam{margin-top:18px;font-family:"Orbitron",sans-serif;font-size:14px;letter-spacing:.04em;color:var(--ink)}
+  .seat{background:var(--paper);padding:26px 24px}
+  .who{font-weight:800;font-size:14px;letter-spacing:.08em}
+  .role{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--org);margin:6px 0 13px}
+  .seat p{margin:0 0 12px;font-size:14px}
+  .seat p:last-child{margin:0}
+  .decides{font-size:12.5px;color:var(--mut);border-top:1px solid var(--line);padding-top:12px;margin-top:14px}
+  .decides b{color:var(--ink);font-weight:600}
+  .oneteam{margin-top:20px;font-family:"Orbitron",sans-serif;font-size:14px;letter-spacing:.04em}
 
-  /* tiers */
+  /* responsibility matrix */
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+  .pill{background:transparent;border:1px solid var(--div);color:var(--mut);border-radius:99px;
+    padding:7px 14px;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;cursor:pointer}
+  .pill:hover{color:var(--ink);border-color:var(--mut)}
+  .pill[aria-pressed="true"]{background:var(--org);border-color:var(--org);color:#141414}
+  .matrix{border:1px solid var(--line);border-radius:3px;overflow:hidden}
+  .mrow{display:grid;grid-template-columns:1fr 84px 84px 84px;gap:0;border-bottom:1px solid var(--line);
+    align-items:center;background:var(--paper)}
+  .mrow:last-child{border-bottom:0}
+  .mrow.head{background:var(--paper2);position:sticky;top:0}
+  .mrow.head div{font-family:"Orbitron",sans-serif;font-size:9.5px;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--mut);padding:12px 10px;text-align:center}
+  .mrow.head div:first-child{text-align:left;padding-left:16px}
+  .mrow .task{padding:13px 16px;font-size:14px;color:var(--mut2)}
+  .mrow .c{text-align:center;font-size:13px;padding:13px 6px;color:rgba(236,236,236,.25)}
+  .mrow .c.on{color:var(--org);font-weight:700}
+  .mrow .c.lead:after{content:" lead";font-size:8.5px;letter-spacing:.1em;color:var(--mut)}
+  .mrow.dim{opacity:.28}
+  .mnote{font-size:12.5px;color:var(--mut);margin-top:12px}
+  @media (max-width:620px){
+    .mrow{grid-template-columns:1fr 54px 54px 54px}
+    .mrow .task{font-size:13px;padding:11px 10px}
+  }
+
+  /* 90 day steps */
+  .steps{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+  .step{background:var(--paper);border:1px solid var(--div);border-radius:3px;padding:22px 20px}
+  .step-n{color:var(--org);font-size:11px;letter-spacing:.2em;font-weight:700}
+  .step h3{font-size:15px;margin:8px 0 8px}
+  .step ul{margin:0}
+  .step li{font-size:13.5px;margin-bottom:7px}
+
+  /* tiers, lower on the page now */
   .tiers{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-bottom:18px}
-  .tier{background:var(--paper);border:1px solid var(--div);border-radius:3px;padding:24px 20px 20px;position:relative;display:flex;flex-direction:column}
-  .tier.rec{border-color:var(--org)}
+  .tier{background:var(--paper);border:1px solid var(--div);border-radius:3px;padding:24px 20px 20px;
+    position:relative;display:flex;flex-direction:column;cursor:pointer;transition:border-color .18s ease}
+  .tier:hover{border-color:var(--mut)}
+  .tier[aria-pressed="true"]{border-color:var(--org)}
+  .tier.rec{border-color:rgba(255,106,0,.5)}
   .flag{position:absolute;top:-1px;right:-1px;background:var(--org);color:#141414;
     font-family:"Orbitron",sans-serif;font-weight:800;font-size:9.5px;letter-spacing:.14em;padding:5px 9px}
   .num{font-size:11px;letter-spacing:.2em;color:var(--org);font-weight:600}
   .tier-name{font-size:16px;font-weight:800;letter-spacing:.05em;margin:6px 0 2px;text-transform:uppercase}
   .alt{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
-  /* the third tier's second name wraps; reserve the line so all three prices sit level */
   .tier .alt{min-height:2.4em}
   .price{font-size:26px;font-weight:700;margin:14px 0 2px}
   .per{font-size:12px;color:var(--mut);letter-spacing:.08em}
   .says{margin:14px 0 12px;font-size:14px;color:var(--ink);font-weight:600;font-style:italic}
   .tier ul{margin-top:auto}
   .tier li{font-size:13.5px;margin-bottom:7px}
+  .chosen{background:var(--paper2);border:1px solid var(--org);border-radius:3px;padding:16px 18px;
+    font-size:14px;color:var(--ink);margin-top:4px}
+  .chosen b{font-family:"Orbitron",sans-serif;letter-spacing:.04em}
 
-  /* detail blocks */
-  .detail{border-left:2px solid var(--div);padding:2px 0 2px 22px;margin-bottom:34px}
-  .detail.rec{border-left-color:var(--org)}
-  .detail .head{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px;margin-bottom:4px}
-  .detail .head .price{font-size:17px;margin:0;color:var(--org)}
-  .sub{font-size:14.5px;color:var(--ink);font-weight:600;margin-bottom:12px}
-  .note{background:var(--paper);border:1px solid var(--line);border-radius:3px;padding:16px 18px;margin:16px 0 0}
+  details{border:1px solid var(--line);border-radius:3px;background:var(--paper);margin-bottom:10px}
+  summary{cursor:pointer;padding:15px 18px;font-weight:600;font-size:14.5px;list-style:none;
+    display:flex;align-items:center;justify-content:space-between;gap:12px}
+  summary::-webkit-details-marker{display:none}
+  summary:after{content:"+";font-family:"Orbitron",sans-serif;color:var(--org);font-size:17px;line-height:1}
+  details[open] summary:after{content:"\2212"}
+  details .body{padding:0 18px 16px}
+  details .body p:last-child,details .body ul:last-child{margin-bottom:0}
+  .head-amt{color:var(--org);font-family:"Orbitron",sans-serif;font-size:13px;white-space:nowrap}
+
+  .note{background:var(--paper);border:1px solid var(--line);border-radius:3px;padding:17px 19px;margin:16px 0 0}
   .note p{margin:0;font-size:13.5px}
   .note .label{font-family:"Orbitron",sans-serif;font-size:10px;letter-spacing:.16em;
     text-transform:uppercase;color:var(--org);margin-bottom:6px}
 
-  /* selection */
   .select{background:var(--paper);border:1px solid var(--div);border-radius:3px;padding:26px 24px}
   .row{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
-  .row:last-child{border-bottom:0}
+  .row:last-of-type{border-bottom:0}
   .box{width:16px;height:16px;border:1.5px solid var(--mut);flex:0 0 auto}
   .row .what{flex:1;font-size:14.5px}
   .row .amt{font-family:"Orbitron",sans-serif;font-size:14px;color:var(--mut2);white-space:nowrap}
-  .row.rec .box{border-color:var(--org)}
-  .row.rec .amt{color:var(--org)}
+  .row.rec .box{border-color:var(--org)} .row.rec .amt{color:var(--org)}
   .sign{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:34px}
   .sigline{border-top:1px solid var(--div);padding-top:9px;font-size:11px;letter-spacing:.14em;
     text-transform:uppercase;color:var(--mut)}
   footer{border-top:1px solid var(--div);margin-top:56px;padding-top:20px;
     font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
-  .back{display:inline-block;margin:30px 0 0;color:var(--org);text-decoration:none;
+  .back{display:inline-block;margin:26px 0 0;color:var(--org);text-decoration:none;
     font-size:12px;letter-spacing:.14em;text-transform:uppercase}
-  .back:hover{color:#ff8a33}
-
-  @media print{
-    body{background:#fff;color:#111}
-    .wrap{max-width:none;padding:0}
-    .tier,.seat,.note,.select{background:#fafafa;border-color:#ddd}
-    p,li,.row .what{color:#333}
-    .back{display:none}
-    section{page-break-inside:avoid}
-  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{transition:none !important}}
 </style>
 </head>
 <body>
@@ -114,22 +155,26 @@
 <header>
   <div class="mark">EVER<b>GUARD</b></div>
   <div class="firms">Keenan Miller Technology Solutions &nbsp;|&nbsp; Joe CXO</div>
-  <h1>Technology Partnership Proposal</h1>
+  <h1>Partnership Agreement</h1>
   <div class="forwho">Prepared for Chris Calderon</div>
   <div class="period">Initial partnership period: <b>October 1 to December 31, 2026</b>.
   An earlier start in September is available, prorated, by mutual agreement.</div>
 </header>
 
+<div class="bar">
+  <a class="dl" href="EverGuard-Partnership-Agreement.pdf" download>Download the PDF</a>
+  <a class="dl ghost" href="#investment">Jump to investment</a>
+  <span style="font-size:12px;color:var(--mut)">The PDF is the plain version for your attorney.</span>
+</div>
+
 <section>
-  <h2>The situation</h2>
+  <h2>What this is</h2>
   <p class="lead">The work in front of you is bigger than day-to-day IT. You are
   running current operations, separating technology from the former parent
   organization, standing up new offices and centers, building the digital side,
   and supporting technology for your own security clients. All at once.</p>
-  <p>This proposal is built around that, not around a block of hours. Each tier
-  below is a level of responsibility and access, not a bigger bucket of labor.
-  The ladder is simple: keep my technology working, take ownership of my
-  technology, help me build the business.</p>
+  <p>This document is about who does what, how decisions get made, and what
+  happens in the first ninety days. The money is near the end, where it belongs.</p>
 </section>
 
 <section>
@@ -140,22 +185,218 @@
       <div class="role">Technology &middot; Execution &middot; Local presence</div>
       <p>Keenan builds and operates the systems. On the island. Stack, cameras,
       access, migrations, the days that need a body on site.</p>
+      <div class="decides"><b>Decides:</b> how something gets built, which tools
+      and vendors do it, the sequence of the technical work.</div>
     </div>
     <div class="seat">
       <div class="who">JOE CXO</div>
       <div class="role">Executive &middot; Operational &middot; Financial strategy</div>
       <p>Joseph is the CXO. You work in the business. He works on it. What gets
       fixed first, so the same problem does not get talked about four times.</p>
+      <div class="decides"><b>Decides:</b> nothing on his own. He recommends
+      priority, structure and spend, and you decide.</div>
+    </div>
+    <div class="seat">
+      <div class="who">CHRIS CALDERON</div>
+      <div class="role">Owner &middot; Final say</div>
+      <p>You stay the owner. You approve budget, sign contracts, and set the
+      direction. The point of this is that fewer things need you, not that you
+      hand over the wheel.</p>
+      <div class="decides"><b>Decides:</b> budget, hiring, anything that touches
+      a client contract, and anything either of us flags as yours.</div>
     </div>
   </div>
   <div class="oneteam">One team. Not two vendors. Not a menu of hours.</div>
 </section>
 
 <section>
-  <h2>Three levels of responsibility</h2>
-  <div class="tiers">
+  <h2>Who owns what</h2>
+  <p>Tap a name to see only that column.</p>
+  <div class="filters">
+    <button class="pill" aria-pressed="true" data-f="all">Everything</button>
+    <button class="pill" aria-pressed="false" data-f="k">Keenan</button>
+    <button class="pill" aria-pressed="false" data-f="j">Joe CXO</button>
+    <button class="pill" aria-pressed="false" data-f="c">Your team</button>
+  </div>
+  <div class="matrix" id="matrix">
+    <div class="mrow head"><div>Area of work</div><div>Keenan</div><div>Joe</div><div>You</div></div>
+  </div>
+  <div class="mnote">Lead means that person owns the outcome, not that they work
+  alone. Anything not listed here gets assigned in writing before work starts.</div>
+</section>
 
-    <div class="tier">
+<section>
+  <h2>How we actually work</h2>
+
+  <details open>
+    <summary>Rhythm <span class="head-amt">Weekly, monthly, quarterly</span></summary>
+    <div class="body">
+      <ul>
+        <li>A 30-minute working call each week. Same day, same time, cancelled only by you.</li>
+        <li>A short written summary at the end of each month: what shipped, what is next, what is stuck and what it is waiting on.</li>
+        <li>A working session at the end of the initial period to decide what comes next.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>Response times <span class="head-amt">By severity, not by promise</span></summary>
+    <div class="body">
+      <ul>
+        <li><b>Down.</b> Cameras, dispatch, access control or the phones are out: same business day, and a call back within two hours.</li>
+        <li><b>Degraded.</b> Something works but badly, or one person is blocked: next business day.</li>
+        <li><b>Everything else.</b> Requests, changes, new work: acknowledged within one business day and scheduled.</li>
+        <li>Standard hours are Monday to Friday, with Saturday by agreement. Wednesday after 6:00 PM and Sundays are generally unavailable unless separately agreed.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>One point of contact <span class="head-amt">In both directions</span></summary>
+    <div class="body">
+      <p>You name one person on your side who can approve work, and we name
+      Keenan on ours. Requests that arrive any other way get logged and brought
+      back to that person rather than quietly done. This is the single biggest
+      reason technology spend gets away from an owner.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Changing the scope <span class="head-amt">In writing, before the work</span></summary>
+    <div class="body">
+      <p>If something significant comes up that was not expected at the start and
+      would substantially change the time, resources or responsibility involved,
+      we stop and review it together first. Any change to scope or price is
+      agreed in writing before work begins. No additional professional-service
+      charges are incurred without prior discussion and approval.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Spending your money <span class="head-amt">$500 approval line</span></summary>
+    <div class="body">
+      <ul>
+        <li>Hardware, licenses, subscriptions and third-party services are yours, bought in your name, on your accounts.</li>
+        <li>Anything over $500, or any new recurring subscription of any size, needs your approval first.</li>
+        <li>We do not mark up equipment or vendor invoices. If a vendor pays a referral or partner fee on something we recommend, you are told before you buy it.</li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<section>
+  <h2>The first ninety days</h2>
+  <p class="lead">October 1 to December 31, 2026. The period exists to prove the
+  value and find the real rhythm, not to run out a clock.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-n">DAYS 1 &ndash; 30</div>
+      <h3>Get the map</h3>
+      <ul>
+        <li>Full inventory: systems, accounts, cameras, vendors, contracts, renewal dates.</li>
+        <li>Every account and credential moved into your name and a password manager you own.</li>
+        <li>The separation plan from the former parent organization, in writing.</li>
+        <li>First read on where money is leaking and what is fragile.</li>
+      </ul>
+    </div>
+    <div class="step">
+      <div class="step-n">DAYS 31 &ndash; 60</div>
+      <h3>Stop the bleeding</h3>
+      <ul>
+        <li>Migration work underway, in the order that removes risk first.</li>
+        <li>Duplicate and unused subscriptions cancelled, with the savings named.</li>
+        <li>Business-unit structure drafted: what belongs under which entity.</li>
+        <li>The two or three processes that eat your week, documented and handed off.</li>
+      </ul>
+    </div>
+    <div class="step">
+      <div class="step-n">DAYS 61 &ndash; 90</div>
+      <h3>Build the next thing</h3>
+      <ul>
+        <li>Office, surveillance and dispatch technology moving on a dated plan.</li>
+        <li>Web and client-facing systems live or scheduled.</li>
+        <li>A written roadmap for the next two quarters, with owners and dates.</li>
+        <li>The review: workload, value delivered, and the service level that fits.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note">
+    <div class="label">How we will know it worked</div>
+    <p>At the review we will look at four things: the separation is done or
+    dated, your recurring technology spend is lower than it is today or
+    explained, the number of things only you can answer has gone down, and the
+    next two quarters have a plan with names on it.</p>
+  </div>
+</section>
+
+<section>
+  <h2>What stays yours</h2>
+  <p>This is the part most technology agreements leave vague, and it is the part
+  that costs an owner the most when a relationship ends.</p>
+  <ul>
+    <li><b>Accounts and credentials.</b> Every account is created in your name and under your domain. You hold the ownership seat on every platform. Nothing is registered under a vendor's account.</li>
+    <li><b>Your data.</b> Footage, logs, client records, documents and anything produced for your business are yours, during and after.</li>
+    <li><b>Work product.</b> Configurations, documentation, runbooks, site plans and websites built for you are yours to keep and to hand to anyone else.</li>
+    <li><b>Our tools stay ours.</b> General methods, templates and internal tooling we bring with us remain ours, and you keep a license to whatever is installed for you.</li>
+    <li><b>Leaving well.</b> If either side ends this, we give you up to 30 days of transition help at no additional monthly fee: documentation, credential handover, and a call with whoever comes next.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The boundaries</h2>
+  <details open>
+    <summary>Included <span class="head-amt">Professional labor</span></summary>
+    <div class="body">
+      <p>For Ownership and Transformation, professional labor on the agreed
+      initiatives is included in the monthly fee. The point is a partnership,
+      not a stream of surprise invoices.</p>
+    </div>
+  </details>
+  <details>
+    <summary>Not included <span class="head-amt">External costs</span></summary>
+    <div class="body">
+      <p>Unless stated otherwise, monthly fees exclude hardware, equipment,
+      software licenses and subscriptions, hosting, domains, construction,
+      cabling, third-party contractors and vendor charges, materials,
+      significant travel, and other external project costs.</p>
+    </div>
+  </details>
+  <details>
+    <summary>Help from others <span class="head-amt">Subcontractors</span></summary>
+    <div class="body">
+      <p>We may bring in specialists for specific work. You are told who and
+      why. Keenan remains responsible for the result and for anyone he brings
+      in, and anyone who touches your systems is under the same confidentiality
+      terms we are.</p>
+    </div>
+  </details>
+  <details>
+    <summary>Confidentiality <span class="head-amt">Both directions</span></summary>
+    <div class="body">
+      <p>What we learn about your business, your clients and your sites stays
+      with us, during and after. The same applies to what you learn about how we
+      work. Neither side uses the other's client list. Neither side hires the
+      other's people during the engagement or for twelve months after, unless
+      both agree in writing.</p>
+    </div>
+  </details>
+  <details>
+    <summary>Insurance and independence <span class="head-amt">Separate businesses</span></summary>
+    <div class="body">
+      <p>Keenan Miller Technology Solutions and Joe CXO are independent
+      businesses, not employees, and each carries its own insurance. Neither
+      firm holds an exclusive claim on your security clients or your other
+      vendors.</p>
+    </div>
+  </details>
+</section>
+
+<section id="investment">
+  <h2>The investment</h2>
+  <p>Three levels of responsibility, matching the deck. Each one is a level of
+  ownership and access, not a bigger bucket of hours. Tap one to mark it.</p>
+  <div class="tiers">
+    <div class="tier" role="button" tabindex="0" aria-pressed="false" data-tier="Support" data-amt="$2,000">
       <div class="num">TIER 1</div>
       <div class="tier-name">Support</div>
       <div class="alt">IT Essentials</div>
@@ -169,8 +410,7 @@
         <li>Day-to-day IT, devices, Microsoft 365, basic networking</li>
       </ul>
     </div>
-
-    <div class="tier">
+    <div class="tier" role="button" tabindex="0" aria-pressed="false" data-tier="Ownership" data-amt="$5,500">
       <div class="num">TIER 2</div>
       <div class="tier-name">Ownership</div>
       <div class="alt">Technology Partner</div>
@@ -185,8 +425,7 @@
         <li>Technology consulting for your security clients</li>
       </ul>
     </div>
-
-    <div class="tier rec">
+    <div class="tier rec" role="button" tabindex="0" aria-pressed="false" data-tier="Transformation" data-amt="$10,000">
       <div class="flag">RECOMMENDED</div>
       <div class="num">TIER 3</div>
       <div class="tier-name">Transformation</div>
@@ -203,118 +442,34 @@
       </ul>
     </div>
   </div>
-  <p>Tier 3 is the recommendation because this transition is not only technical.
-  It involves decisions about how the businesses themselves are structured and
-  run, and those decisions are easier to make with the person building the
-  systems and the person working on the business at the same table.</p>
+  <div class="chosen" id="chosen">Nothing marked yet. Tap a tier above and it carries down to the selection.</div>
+  <p style="margin-top:18px">Transformation is the recommendation because this
+  transition is not only technical. It involves decisions about how the
+  businesses themselves are structured and run, and those are easier to make
+  with the person building the systems and the person working on the business at
+  the same table.</p>
 </section>
 
 <section>
-  <h2>What each tier covers</h2>
-
-  <div class="detail">
-    <div class="head"><h3>01 &nbsp; Support</h3><div class="price">$2,000 / month</div></div>
-    <div class="sub">Dependable local help for the everyday.</div>
-    <ul>
-      <li>12 included service hours a month for on-site or remote IT support.</li>
-      <li>Unused hours roll forward while the engagement is active, to a maximum bank of 24. Banked hours have no cash value and expire when the engagement ends.</li>
-      <li>Additional standard support billed at $125 an hour.</li>
-      <li>Typical work: device and workstation setup, software troubleshooting, Microsoft 365, basic networking, vendor coordination, routine maintenance.</li>
-      <li>Major initiatives and business buildouts sit outside this tier. They are scoped separately or handled under Ownership.</li>
-    </ul>
-  </div>
-
-  <div class="detail">
-    <div class="head"><h3>02 &nbsp; Ownership</h3><div class="price">$5,500 / month</div></div>
-    <div class="sub">From IT support to IT ownership.</div>
-    <p>Keenan becomes your primary local technology resource, with priority
-    weekday scheduling for operations, active projects and agreed initiatives.
-    The tier is built around responsibility and availability rather than an
-    hourly allowance.</p>
-    <ul>
-      <li>Day-to-day local and remote IT support.</li>
-      <li>Technology separation and migration from the former parent organization.</li>
-      <li>Microsoft 365, document and collaboration systems.</li>
-      <li>Office technology planning and buildout.</li>
-      <li>Surveillance-center and dispatch-center technology, planned, coordinated and implemented.</li>
-      <li>Technology consulting and project help for your security-contracted clients.</li>
-      <li>Website creation, migration and maintenance for agreed properties.</li>
-      <li>Vendor coordination and execution for new business initiatives.</li>
-    </ul>
-    <div class="note">
-      <div class="label">Priority availability</div>
-      <p>Ownership and Transformation receive priority scheduling for weekday
-      needs and active projects. Standard availability is Monday to Friday, with
-      Saturday scheduling by agreement. Wednesday after 6:00 PM and Sundays are
-      generally unavailable unless separately agreed.</p>
-    </div>
-  </div>
-
-  <div class="detail rec">
-    <div class="head"><h3>03 &nbsp; Transformation</h3><div class="price">$10,000 / month</div></div>
-    <div class="sub">One partnership. Two complementary perspectives.</div>
-    <p>Everything in Ownership, plus Joe CXO. Keenan executes the technology.
-    Joseph strengthens the business around it. His work is objective and
-    milestone driven: he works on the business rather than functioning as
-    day-to-day staff inside it.</p>
-    <ul>
-      <li>Operational and process review, aimed at making the business easier to run and to scale.</li>
-      <li>Cost-efficiency analysis and removal of unnecessary operating expense.</li>
-      <li>Financial and process cleanup, with better visibility and better decisions around the numbers.</li>
-      <li>Business-unit structure: which activities, systems, contracts and operations belong under which business as you move off the former parent company.</li>
-      <li>Planning and functional buildout of the newer parts of the business.</li>
-      <li>Roadmap alignment, so the systems support the operating model instead of dictating it.</li>
-      <li>Evaluation of vendors, strategic relationships and potential partnerships.</li>
-      <li>Recurring executive strategy on priorities, risks, growth and the next stage of the organization.</li>
-    </ul>
-  </div>
+  <h2>Commercial terms</h2>
+  <ul>
+    <li>Monthly in full on the 1st, or split 50% on the 1st and 50% on the 15th. Your choice.</li>
+    <li>An earlier start in September is available, prorated to the agreed date.</li>
+    <li>If an invoice goes unpaid, work pauses rather than quietly accumulating. Nothing is billed for a period we did not work.</li>
+    <li>External costs are billed at cost, with the invoice attached, or bought directly on your accounts.</li>
+    <li>The initial arrangement may include a 30-day written termination option, subject to the final service agreement.</li>
+  </ul>
 </section>
 
 <section>
-  <h2>Clear boundaries</h2>
-  <p>Ownership and Transformation are meant to be complete professional-service
-  engagements for the technology needs and projects identified, and reasonably
-  expected, at the start of the initial period.</p>
-  <h3>Included</h3>
-  <p>For Tiers 2 and 3, Keenan's professional labor on the agreed initiatives is
-  included in the monthly fee. The point is a partnership, not a stream of
-  surprise invoices.</p>
-  <h3>Not included</h3>
-  <p>Unless stated otherwise, monthly fees exclude hardware, equipment, software
-  licenses and subscriptions, hosting, domains, construction, cabling,
-  third-party contractors and vendor charges, materials, significant travel, and
-  other external project costs.</p>
-  <h3>Materially new or unusually large projects</h3>
-  <p>If something significant comes up that was not contemplated at the outset
-  and would substantially change the time, resources or responsibility involved,
-  both sides review it together before work begins. Any change to scope or price
-  is agreed in writing first. No additional professional-service charges are
-  incurred without prior discussion and approval.</p>
-</section>
-
-<section>
-  <h2>The first 90 days</h2>
-  <p class="lead">October 1 to December 31, 2026.</p>
-  <p>The initial period exists to prove the value and find the real operating
-  rhythm of the relationship. At the end of it, you and Keenan review workload,
-  utilization, value delivered, active and upcoming projects, responsibilities,
-  and the service level that makes sense going forward.</p>
-  <p>After that review the partnership may continue month to month, renew for
-  another 90 days, or move to a longer-term agreement such as an annual
-  partnership. The initial arrangement may include a 30-day written termination
-  option, subject to the final service agreement.</p>
-</section>
-
-<section>
-  <h2>Commercial terms and next steps</h2>
+  <h2>Selection and signature</h2>
   <div class="select">
-    <div class="row"><div class="box"></div><div class="what"><b>Support</b> &mdash; keep my technology working</div><div class="amt">$2,000 / mo</div></div>
-    <div class="row"><div class="box"></div><div class="what"><b>Ownership</b> &mdash; take ownership of my technology</div><div class="amt">$5,500 / mo</div></div>
-    <div class="row rec"><div class="box"></div><div class="what"><b>Transformation</b> &mdash; help me build what comes next &nbsp;<span class="alt">Recommended</span></div><div class="amt">$10,000 / mo</div></div>
-    <div class="row" style="margin-top:10px"><div class="box"></div><div class="what">Payment monthly, in full on the 1st</div><div class="amt">&nbsp;</div></div>
-    <div class="row"><div class="box"></div><div class="what">Payment semi-monthly, 50% on the 1st and 50% on the 15th</div><div class="amt">&nbsp;</div></div>
-    <div class="row"><div class="box"></div><div class="what">Early start in September, prorated to the agreed date</div><div class="amt">&nbsp;</div></div>
-
+    <div class="row" data-sel="Support"><div class="box"></div><div class="what"><b>Support</b> &mdash; keep my technology working</div><div class="amt">$2,000 / mo</div></div>
+    <div class="row" data-sel="Ownership"><div class="box"></div><div class="what"><b>Ownership</b> &mdash; take ownership of my technology</div><div class="amt">$5,500 / mo</div></div>
+    <div class="row rec" data-sel="Transformation"><div class="box"></div><div class="what"><b>Transformation</b> &mdash; help me build what comes next &nbsp;<span class="alt">Recommended</span></div><div class="amt">$10,000 / mo</div></div>
+    <div class="row" style="margin-top:10px"><div class="box"></div><div class="what">Monthly, in full on the 1st</div><div class="amt">&nbsp;</div></div>
+    <div class="row"><div class="box"></div><div class="what">Semi-monthly, 50% on the 1st and 50% on the 15th</div><div class="amt">&nbsp;</div></div>
+    <div class="row"><div class="box"></div><div class="what">Early start in September, prorated</div><div class="amt">&nbsp;</div></div>
     <div class="sign">
       <div><div class="sigline">Chris Calderon &nbsp;&middot;&nbsp; Date</div></div>
       <div><div class="sigline">Keenan Miller &nbsp;&middot;&nbsp; Date</div></div>
@@ -323,7 +478,7 @@
 
   <div class="note" style="margin-top:22px">
     <div class="label">Before signature</div>
-    <p>This proposal sets the scope, structure and commercial terms. The final
+    <p>This document sets the scope, structure and commercial terms. The final
     service agreement should be reviewed by each side's legal or professional
     advisor. Chris is specifically encouraged to have her attorney review the
     final agreement before signing.</p>
@@ -334,5 +489,82 @@
 
 <footer>Prepared by Keenan Miller Technology Solutions with Joe CXO &nbsp;&middot;&nbsp; Prepared for Chris Calderon &nbsp;&middot;&nbsp; Confidential</footer>
 </div>
+
+<script>
+/* Responsibility matrix. Kept as data so one edit changes the page and the PDF
+   generator reads the same list. k = Keenan, j = Joe CXO, c = Chris's team.
+   2 means that column leads. */
+var WORK = [
+  ["Day-to-day IT, devices and accounts",            2,0,0],
+  ["Cameras, access control, dispatch technology",   2,0,1],
+  ["Separation from the former parent organization", 2,1,1],
+  ["Microsoft 365, files and collaboration",         2,0,0],
+  ["Office, surveillance and dispatch buildouts",    2,1,1],
+  ["Websites and client-facing systems",             2,1,1],
+  ["Vendor selection and coordination",              2,1,1],
+  ["Technology help for your security clients",      2,0,1],
+  ["What gets fixed first, and in what order",       1,2,1],
+  ["Operating process and making the week easier",   0,2,1],
+  ["Cost efficiency and recurring spend",            1,2,1],
+  ["Business-unit structure and entity questions",   0,2,1],
+  ["Growth planning and new opportunities",          0,2,1],
+  ["Pricing and client contracts",                   0,1,2],
+  ["Hiring and staffing",                            0,1,2],
+  ["Budget approval and signing",                    0,0,2]
+];
+(function(){
+  var m = document.getElementById('matrix');
+  var mark = function(v){ return v === 0 ? '&middot;' : (v === 2 ? '&#9679;' : '&#9679;'); };
+  WORK.forEach(function(r){
+    var row = document.createElement('div');
+    row.className = 'mrow';
+    row.dataset.k = r[1]; row.dataset.j = r[2]; row.dataset.c = r[3];
+    row.innerHTML = '<div class="task">' + r[0] + '</div>' +
+      [1,2,3].map(function(i){
+        var v = r[i];
+        return '<div class="c' + (v ? ' on' : '') + (v === 2 ? ' lead' : '') + '">' + mark(v) + '</div>';
+      }).join('');
+    m.appendChild(row);
+  });
+
+  var pills = document.querySelectorAll('.pill');
+  pills.forEach(function(p){
+    p.addEventListener('click', function(){
+      pills.forEach(function(o){ o.setAttribute('aria-pressed', String(o === p)); });
+      var f = p.dataset.f;
+      document.querySelectorAll('.mrow:not(.head)').forEach(function(row){
+        row.classList.toggle('dim', f !== 'all' && row.dataset[f] === '0');
+      });
+    });
+  });
+
+  /* Tier marking carries down to the signature block, so tapping a card on a
+     phone is enough to say which one she wants. */
+  var chosen = document.getElementById('chosen');
+  function pick(name, amt){
+    document.querySelectorAll('.tier').forEach(function(t){
+      t.setAttribute('aria-pressed', String(t.dataset.tier === name));
+    });
+    document.querySelectorAll('.row[data-sel]').forEach(function(r){
+      r.querySelector('.box').style.background = r.dataset.sel === name ? 'var(--org)' : 'transparent';
+      r.querySelector('.box').style.borderColor = r.dataset.sel === name ? 'var(--org)' : '';
+    });
+    chosen.innerHTML = 'Marked: <b>' + name + '</b>, ' + amt +
+      ' per month. It is carried down to the selection below. Nothing is committed by tapping.';
+  }
+  document.querySelectorAll('.tier').forEach(function(t){
+    t.addEventListener('click', function(){ pick(t.dataset.tier, t.dataset.amt); });
+    t.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(t.dataset.tier, t.dataset.amt); }
+    });
+  });
+  document.querySelectorAll('.row[data-sel]').forEach(function(r){
+    r.addEventListener('click', function(){
+      var t = document.querySelector('.tier[data-tier="' + r.dataset.sel + '"]');
+      pick(r.dataset.sel, t ? t.dataset.amt : '');
+    });
+  });
+})();
+</script>
 </body>
 </html>
