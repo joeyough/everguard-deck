@@ -27,7 +27,12 @@ it is wrong.
 
 - Headers: **Orbitron**, 700 or 800, uppercase, letter spacing .04em to .08em.
 - Body: **Montserrat**, 400 and 600, sentence case, line height about 1.6.
-- No third family. No italic display type. Numbers in Orbitron.
+- No third family. No italic display type.
+- **Orbitron is never used below 16px.** It is a display face; at 8 to 12px with
+  wide tracking it stops being read and starts being decoded. Her deck sets it
+  from 16px up and never smaller. Every label, tag, timestamp, pill and button
+  under 16px is Montserrat 600 or 700, tracking around .08em, not .16em.
+- Large numbers in Orbitron. Small numbers, like timestamps, in Montserrat.
 
 ## Motion
 
