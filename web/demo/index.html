@@ -121,6 +121,13 @@ button.ctl:focus-visible{outline:2px solid var(--org);outline-offset:2px}
 .rrow span:first-child{color:var(--mut)}
 .rnote{margin:16px 0 0;font-size:12.5px;color:var(--mut);line-height:1.55}
 
+.after{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0}
+.after .ctl{display:inline-flex;align-items:center;justify-content:center;min-height:46px;
+  padding:12px 20px;border:1px solid var(--div);border-radius:3px;color:var(--ink);
+  text-decoration:none;font-family:"Orbitron",sans-serif;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;transition:border-color .2s,color .2s}
+.after .ctl:hover{border-color:var(--org);color:var(--org)}
+.afternote{margin:12px 0 0;font-size:12.5px;color:var(--mut);max-width:62ch}
 .foot{margin:26px 0 0;padding-top:18px;border-top:1px solid var(--line);
   display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
 .foot a{color:var(--org);text-decoration:none;font-family:"Orbitron",sans-serif;
@@ -190,6 +197,13 @@ button.ctl:focus-visible{outline:2px solid var(--org);outline-offset:2px}
     <p class="rnote">This is the page a client sees. It is also the page that
     renews a contract, because it shows what was paid for.</p>
   </div>
+
+  <div class="after">
+    <a class="ctl" href="./film/">See the fleet film</a>
+    <a class="ctl" href="../agreement/">Read the agreement</a>
+  </div>
+  <p class="afternote">The film is a sample of the brand and web work, the kind
+  of thing your other sites would get. This console is the product.</p>
 
   <div class="foot">
     <a href="../">&larr; Back to the proposal</a>

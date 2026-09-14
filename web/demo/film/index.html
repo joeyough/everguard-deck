@@ -47,7 +47,9 @@ body::after{content:'';position:fixed;inset:-12%;pointer-events:none;z-index:90;
 
 /* HUD: the top-left readout ran into the clock, and the build label ran into
    the sound toggle. */
-@media (max-width:760px){
+/* Every rail button is a real target at every width, not only on phones. */
+[data-mb="rail"] button{min-height:44px;display:flex;align-items:center}
+@media (max-width:900px){
   [data-hud="tl"]{left:12px !important;gap:7px !important}
   [data-hud="tr"]{right:12px !important;gap:9px !important}
   [data-hud="bl"]{left:12px !important;font-size:7.5px !important;letter-spacing:.18em !important}
@@ -56,16 +58,24 @@ body::after{content:'';position:fixed;inset:-12%;pointer-events:none;z-index:90;
 }
 @media (max-width:470px){ [data-hud="frames"]{display:none !important} }
 
-@media (max-width:760px){
+@media (max-width:900px){
   /* The beat rail is a fixed column on the right edge. Shrink it and keep the
      controls clear of it, instead of letting buttons run underneath. */
-  [data-mb="rail"]{right:7px !important;gap:13px !important}
+  /* The prototype hides the rail labels only below 700px, so a tablet kept a
+     143px wide rail and the controls ran under it. Hide them wherever the
+     stacked layout applies. */
+  [data-rail-label]{display:none !important}
+  [data-mb="rail"]{right:4px !important;gap:4px !important}
+  /* The rail dashes were a 18x10 tap target. Keep the dash small and grow the
+     hit area around it instead, so a thumb can actually use it. */
+  [data-mb="rail"] button{min-height:44px !important;min-width:44px !important;
+    justify-content:flex-end !important;padding:0 8px !important}
   [data-mb="rail"] button span:last-child{width:10px !important}
-  [data-mb="flip-controls"]{margin-right:34px !important;margin-left:14px !important;
+  [data-mb="flip-controls"]{margin-right:58px !important;margin-left:14px !important;
     gap:12px !important;row-gap:10px !important}
   [data-mb="flip-controls"] button{padding:9px 12px !important;font-size:10px !important;
     letter-spacing:.1em !important}
-  [data-mb="crew-row"]{padding-right:40px !important;padding-left:16px !important;
+  [data-mb="crew-row"]{padding-right:58px !important;padding-left:16px !important;
     gap:18px !important}
 
   /* Live Island: the dispatch feed was a narrow overlay pinned to the right
@@ -342,7 +352,8 @@ body::after{content:'';position:fixed;inset:-12%;pointer-events:none;z-index:90;
       <div style="font-family:Orbitron;font-weight:800;font-size:clamp(34px,7vw,64px);letter-spacing:.1em;transform:scale({{ closeScale }});transition:transform .9s cubic-bezier(.2,.8,.2,1)"><span style="color:#E6E6E6">EVER</span><span style="color:#FF6A00">GUARD</span></div>
       <div style="width:110px;height:1px;background:#444"></div>
       <div style="font-size:clamp(14px,1.8vw,17px);letter-spacing:.06em;color:#E6E6E6;min-height:1.6em"><span ref="{{ tagRef }}"></span><span style="display:inline-block;width:10px;height:2px;background:#FF6A00;margin-left:4px;vertical-align:middle;animation:recblink 1s steps(1) infinite"></span></div>
-      <a href="../" onClick="{{ clickSfx }}" style="display:inline-block;margin-top:14px;border:1px solid #FF6A00;color:#FF6A00;text-decoration:none;font-family:Orbitron;font-size:12px;letter-spacing:.22em;padding:15px 32px;min-height:44px;box-sizing:border-box;transition:border-color .25s,color .25s;animation:glowPulse 2.6s ease-in-out infinite" style-hover="border-color:#CC4E00;color:#CC4E00">SEE THE PARTNERSHIP</a>
+      <a href="../" onClick="{{ clickSfx }}" style="display:inline-block;margin-top:14px;border:1px solid #FF6A00;color:#FF6A00;text-decoration:none;font-family:Orbitron;font-size:12px;letter-spacing:.22em;padding:15px 32px;min-height:44px;box-sizing:border-box;transition:border-color .25s,color .25s;animation:glowPulse 2.6s ease-in-out infinite" style-hover="border-color:#CC4E00;color:#CC4E00">OPEN THE CONSOLE</a>
+      <div style="margin-top:18px;font-family:Montserrat;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(230,230,230,.42)">Brand and web craft sample &middot; the product is the console</div>
     </div>
 
   </div>

@@ -56,6 +56,12 @@ a.door:focus-visible{outline:2px solid var(--org);outline-offset:2px}
 .door.next{background:transparent;border-style:dashed}
 .door.next .tag{color:var(--mut2)}
 
+.stack{display:flex;flex-direction:column;gap:8px}
+.stack .door{flex:1 1 auto}
+.sub-link{display:inline-flex;align-items:center;min-height:44px;padding:2px 4px;
+  color:var(--mut);text-decoration:none;font-size:12px;letter-spacing:.1em}
+.sub-link:hover,.sub-link:focus-visible{color:var(--org)}
+.sample{color:var(--mut);letter-spacing:.12em}
 .foot{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-wrap:wrap;
   gap:10px 20px;align-items:center;justify-content:space-between}
 .foot .line{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
@@ -67,7 +73,7 @@ a.door:focus-visible{outline:2px solid var(--org);outline-offset:2px}
 
   <div class="bar">
     <div class="brand">EVER<b>GUARD</b></div>
-    <div class="firms">Keenan Miller Technology Solutions &nbsp;|&nbsp; Joe CXO</div>
+    <div class="firms">Keenan Miller Technology Solutions &nbsp;|&nbsp; Joe CXO<br><span class="sample">This site is the sample.</span></div>
     <div class="spacer"></div>
     <div class="private">Private &middot; not for distribution</div>
   </div>
@@ -82,12 +88,15 @@ a.door:focus-visible{outline:2px solid var(--org);outline-offset:2px}
   </header>
 
   <div class="doors">
-    <a class="door" href="./demo/">
-      <div class="num">01</div>
-      <h2>The console</h2>
-      <p>One night, one alert, one closed report. Run it yourself.</p>
-      <div class="tag">Run the incident</div>
-    </a>
+    <div class="stack">
+      <a class="door" href="./demo/">
+        <div class="num">01</div>
+        <h2>The console</h2>
+        <p>One night, one alert, one closed report. Run it yourself.</p>
+        <div class="tag">Run the incident</div>
+      </a>
+      <a class="sub-link" href="./demo/film/">Fleet film &middot; brand and web sample &rarr;</a>
+    </div>
 
     <a class="door" href="./deck/">
       <div class="num">02</div>
