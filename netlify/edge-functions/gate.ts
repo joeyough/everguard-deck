@@ -25,7 +25,7 @@ function page(error: boolean): Response {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow, noarchive">
 <title>EverGuard</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
  :root{--org:#ff6a00;--ink:#ececec;--mut:rgba(236,236,236,.55);--div:rgba(236,236,236,.16)}
  *{box-sizing:border-box}
@@ -40,9 +40,9 @@ function page(error: boolean): Response {
  input{width:100%;padding:13px 14px;background:#202020;border:1px solid var(--div);border-radius:3px;
    color:var(--ink);font-size:16px;font-family:inherit}
  input:focus{outline:none;border-color:var(--org)}
- button{width:100%;margin-top:14px;padding:13px;background:var(--org);border:0;border-radius:3px;
-   color:#141414;font-family:Orbitron,sans-serif;font-weight:800;font-size:13px;letter-spacing:.14em;
-   text-transform:uppercase;cursor:pointer}
+ button{width:100%;margin-top:14px;padding:14px;min-height:48px;background:var(--org);border:0;
+   border-radius:3px;color:#141414;font-family:Montserrat,system-ui,sans-serif;font-weight:700;
+   font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;cursor:pointer}
  button:hover{background:#ff8a33}
  .err{margin-top:14px;color:var(--org);font-size:13px}
  .foot{margin-top:26px;color:var(--mut);font-size:11.5px;line-height:1.6}

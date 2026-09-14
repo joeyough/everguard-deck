@@ -108,7 +108,7 @@ button.ctl:focus-visible{outline:2px solid var(--org);outline-offset:2px}
   pointer-events:none}
 .report.on{opacity:1;transform:none;pointer-events:auto}
 .rhead{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline;margin-bottom:4px}
-.rhead h3{font-size:15px;margin:0;letter-spacing:.04em}
+.rhead h3{font-size:16.5px;margin:0;letter-spacing:.03em}
 .rid{font-family:"Orbitron",sans-serif;font-size:10px;letter-spacing:.14em;color:var(--mut)}
 .rsum{color:var(--mut2);margin:8px 0 16px;font-size:14.5px}
 .thumbs{display:grid;gap:8px;grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:16px}
@@ -148,6 +148,27 @@ button.ctl:focus-visible{outline:2px solid var(--org);outline-offset:2px}
 .foot a:hover{color:#ff8a33}
 .foot .note{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
 
+
+/* READABILITY PASS. Her deck sets Orbitron at 16px and up and never smaller;
+   it is a display face, and at 8 to 11px with wide tracking it stops being
+   legible and starts being work to read. Orbitron keeps the wordmark and the
+   real headings. Every small label, tag, timestamp and button is Montserrat,
+   a little larger and less tracked. */
+.live,.clock,.kicker,.log h2,.pill,.cam .tag,.cam .ts,.cam .flag,.ev .t,.rid,
+.thumb span,button.ctl,.exit a,.foot a,.foot .note,.rrow{
+  font-family:"Montserrat",system-ui,-apple-system,sans-serif}
+.live,.clock,.kicker{font-size:11px;letter-spacing:.1em;font-weight:600}
+.log h2{font-size:11px;letter-spacing:.1em;font-weight:700}
+.pill{font-size:11px;letter-spacing:.06em;font-weight:600}
+.cam .tag,.cam .ts{font-size:9.5px;letter-spacing:.04em;font-weight:600}
+.cam .flag{font-size:9px;letter-spacing:.06em;font-weight:700}
+.ev .t{font-size:12px;letter-spacing:.01em;font-weight:700}
+.rid{font-size:11px;letter-spacing:.08em;font-weight:600}
+.thumb span{font-size:9px;letter-spacing:.02em;font-weight:600}
+button.ctl,.exit a{font-size:11.5px;letter-spacing:.09em;font-weight:700}
+.foot a{font-size:11.5px;letter-spacing:.09em;font-weight:700}
+.foot .note{font-size:11px;letter-spacing:.05em;font-weight:500}
+.brand{font-size:16px}
 @media (prefers-reduced-motion:reduce){
   *{animation:none !important;transition:none !important}
   .report{opacity:1;transform:none}

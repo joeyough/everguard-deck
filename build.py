@@ -45,14 +45,17 @@ deck-stage{display:block;max-width:1600px;margin:0 auto;padding:18px 18px 40px}
 /* The export assumes a 1920x1080 box including its own padding. Without this
    the padding is added outside the width and the right edge clips. */
 .frame > .slide *{box-sizing:border-box}
-.deck-end{color:rgba(236,236,236,.45);font:500 12px/1.6 Montserrat,system-ui,sans-serif;
-  letter-spacing:.16em;text-transform:uppercase;text-align:center;padding:6px 0 14px}
+.deck-end{color:rgba(236,236,236,.52);font:600 12px/1.6 Montserrat,system-ui,sans-serif;
+  letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:6px 0 14px}
 /* The deck ends by moving her on, not by stopping. Same exit pattern as every
    other section: the next thing in the story, then home. */
 .exit{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:0 0 34px}
+/* Montserrat, not Orbitron: a display face at 11px with wide tracking is what
+   makes small interface text tiring to read. */
 .exit a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;
   padding:13px 22px;border-radius:3px;text-decoration:none;border:1px solid;
-  font-family:Orbitron,system-ui,sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+  font-family:Montserrat,system-ui,sans-serif;font-weight:700;font-size:11.5px;
+  letter-spacing:.09em;text-transform:uppercase}
 .exit a.go{background:#ff6a00;border-color:#ff6a00;color:#141414;font-weight:700}
 .exit a.go:hover{background:#ff8a33}
 .exit a.home{background:transparent;border-color:rgba(236,236,236,.18);color:rgba(236,236,236,.84)}

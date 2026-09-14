@@ -60,7 +60,7 @@
   .seat p:last-child{margin:0}
   .decides{font-size:12.5px;color:var(--mut);border-top:1px solid var(--line);padding-top:12px;margin-top:14px}
   .decides b{color:var(--ink);font-weight:600}
-  .oneteam{margin-top:20px;font-family:"Orbitron",sans-serif;font-size:14px;letter-spacing:.04em}
+  .oneteam{margin-top:20px;font-family:"Orbitron",sans-serif;font-size:16.5px;letter-spacing:.03em}
 
   /* responsibility matrix */
   .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
@@ -97,7 +97,7 @@
   .steps{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
   .step{background:var(--paper);border:1px solid var(--div);border-radius:3px;padding:22px 20px}
   .step-n{color:var(--org);font-size:11px;letter-spacing:.2em;font-weight:700}
-  .step h3{font-size:15px;margin:8px 0 8px}
+  .step h3{font-size:16.5px;margin:8px 0 8px}
   .step ul{margin:0}
   .step li{font-size:13.5px;margin-bottom:7px}
 
@@ -109,7 +109,8 @@
   .tier[aria-pressed="true"]{border-color:var(--org)}
   .tier.rec{border-color:rgba(255,106,0,.5)}
   .flag{position:absolute;top:-1px;right:-1px;background:var(--org);color:#141414;
-    font-family:"Orbitron",sans-serif;font-weight:800;font-size:9.5px;letter-spacing:.14em;padding:5px 9px}
+    font-family:"Montserrat",system-ui,sans-serif;font-weight:700;font-size:10.5px;
+    letter-spacing:.07em;padding:5px 9px}
   .num{font-size:11px;letter-spacing:.2em;color:var(--org);font-weight:600}
   .tier-name{font-size:16px;font-weight:800;letter-spacing:.05em;margin:6px 0 2px;text-transform:uppercase}
   .alt{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
@@ -161,6 +162,30 @@
     font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
   .back{display:inline-flex;align-items:center;min-height:44px;margin:20px 0 0;color:var(--org);
     text-decoration:none;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+
+/* READABILITY PASS. Her deck sets Orbitron at 16px and up and never smaller;
+   it is a display face, and at 9 to 12px with wide tracking it stops being
+   legible and starts being work to read. Orbitron keeps the wordmark, the
+   headline, the tier names and the prices. Everything small is Montserrat,
+   slightly larger and less tracked. */
+  h2,.num,.step-n,.pill,.dl,.who,.alt,.rid,.mrow.head div,.note .label,
+  .row .amt,.sigline,.exit a,.firms,.forwho,footer,.head-amt,.mnote{
+    font-family:"Montserrat",system-ui,-apple-system,sans-serif}
+  h2{font-size:12.5px;letter-spacing:.13em;font-weight:700}
+  .num,.step-n{font-size:11.5px;letter-spacing:.1em;font-weight:700}
+  .pill{font-size:11.5px;letter-spacing:.06em;font-weight:700}
+  .dl{font-size:12px;letter-spacing:.08em;font-weight:700}
+  .who{font-size:14.5px;letter-spacing:.04em;font-weight:700}
+  .alt{font-size:11.5px;letter-spacing:.06em;font-weight:600}
+  .rid{font-size:11px;letter-spacing:.07em;font-weight:600}
+  .mrow.head div{font-size:10.5px;letter-spacing:.07em;font-weight:700}
+  .note .label{font-size:11px;letter-spacing:.1em;font-weight:700}
+  .row .amt{font-size:14px;letter-spacing:.01em;font-weight:700}
+  .sigline{font-size:11.5px;letter-spacing:.08em;font-weight:600}
+  .exit a{font-size:11.5px;letter-spacing:.09em;font-weight:700}
+  .firms,.forwho{font-size:11.5px;letter-spacing:.1em;font-weight:600}
+  .head-amt{font-size:13.5px;letter-spacing:.02em;font-weight:700}
+  footer{font-size:11.5px;letter-spacing:.06em;font-weight:500}
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{transition:none !important}}
 </style>
 </head>

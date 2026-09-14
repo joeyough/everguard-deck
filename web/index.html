@@ -76,6 +76,20 @@ a.door.sample:hover .tag,a.door.sample:focus-visible .tag{color:var(--org)}
 .foot{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-wrap:wrap;
   gap:10px 20px;align-items:center;justify-content:space-between}
 .foot .line{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+
+/* READABILITY PASS. Her deck sets Orbitron at 16px and up and never smaller;
+   it is a display face, and at 8 to 11px with wide tracking it stops being
+   legible and starts being work to read. Orbitron keeps the wordmark and the
+   real headings. Every small label, tag, timestamp and button is Montserrat,
+   a little larger and less tracked. */
+.num,.tag,.private,.firms,.foot .line{
+  font-family:"Montserrat",system-ui,-apple-system,sans-serif}
+.num{font-size:11.5px;letter-spacing:.1em;font-weight:700}
+.tag{font-size:11.5px;letter-spacing:.09em;font-weight:700}
+.private{font-size:10.5px;letter-spacing:.1em;font-weight:600}
+.firms{font-size:11px;letter-spacing:.09em;font-weight:500}
+.foot .line{font-size:11.5px;letter-spacing:.06em;font-weight:500}
+.for{font-size:11.5px;letter-spacing:.14em;font-weight:700}
 @media (prefers-reduced-motion:reduce){*{transition:none !important}}
 </style>
 </head>
