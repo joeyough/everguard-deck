@@ -3,8 +3,18 @@
 Private proposal for **Chris Calderon**. Keenan Miller Technology Solutions and
 Joe CXO.
 
-Live: **https://everguard-proposal.netlify.app** (noindex, robots blocked, not
-linked from anywhere). Nothing has been sent to the client yet.
+> **This repository is public.** Anything committed here can be read by anyone
+> who finds it, including search engines. Client details and pricing are
+> already in the deck files, which is a deliberate choice by Joey so Keenan can
+> read the work without a GitHub account. Do not add anything else that would
+> hurt if a stranger read it: no contracts, no signed agreements, no bank or
+> payment details, no personal contact information, and no credentials. The
+> site's access code lives in a Netlify environment variable and must never be
+> committed.
+
+Live: **https://everguard-proposal.netlify.app**, behind a shared access code
+checked at the edge, so the site serves nothing without it. Ask Joey for the
+code. Nothing has been sent to the client yet.
 
 ## Three pieces
 
