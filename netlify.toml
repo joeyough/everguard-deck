@@ -2,3 +2,6 @@
 # X-Robots-Tag header in web/_headers. It is a private client proposal.
 [build]
   publish = "web"
+
+[functions]
+  # edge functions live in netlify/edge-functions and are picked up automatically
