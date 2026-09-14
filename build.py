@@ -46,7 +46,17 @@ deck-stage{display:block;max-width:1600px;margin:0 auto;padding:18px 18px 40px}
    the padding is added outside the width and the right edge clips. */
 .frame > .slide *{box-sizing:border-box}
 .deck-end{color:rgba(236,236,236,.45);font:500 12px/1.6 Montserrat,system-ui,sans-serif;
-  letter-spacing:.16em;text-transform:uppercase;text-align:center;padding:6px 0 26px}
+  letter-spacing:.16em;text-transform:uppercase;text-align:center;padding:6px 0 14px}
+/* The deck ends by moving her on, not by stopping. Same exit pattern as every
+   other section: the next thing in the story, then home. */
+.exit{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:0 0 34px}
+.exit a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;
+  padding:13px 22px;border-radius:3px;text-decoration:none;border:1px solid;
+  font-family:Orbitron,system-ui,sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.exit a.go{background:#ff6a00;border-color:#ff6a00;color:#141414;font-weight:700}
+.exit a.go:hover{background:#ff8a33}
+.exit a.home{background:transparent;border-color:rgba(236,236,236,.18);color:rgba(236,236,236,.84)}
+.exit a.home:hover{border-color:#ff6a00;color:#ff6a00}
 /* Joey cut the top-left corner motif: its diagonal ran against the angle of
    the right-hand rules and the page-number slashes. As of the 14 Sep export the
    markup no longer contains it at all, so this rule is now only a guard in case
@@ -103,6 +113,8 @@ def main():
         '<meta name="robots" content="noindex, nofollow, noarchive">\n'
         '<title>%s</title>\n%s\n<style>%s</style>\n<style>%s</style>\n</head>\n'
         '<body>\n<deck-stage>\n%s\n<div class="deck-end">End &middot; EverGuard</div>\n'
+        '<div class="exit"><a class="go" href="../agreement/">The agreement</a>'
+        '<a class="home" href="../">Home</a></div>\n'
         '</deck-stage>\n<script>%s</script>\n</body>\n</html>\n'
     ) % (title, fonts.group(0) if fonts else '', deck_css.group(1), LAYOUT, frames, SCALE_JS)
 

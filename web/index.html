@@ -46,7 +46,7 @@ h1 span{color:var(--org)}
    slots so they stay adjacent, and Next step runs the full width underneath as
    a call to action rather than a stranded fifth column. */
 @media (min-width:720px){.door.next{grid-column:1 / -1;min-height:0}}
-.door.next{flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:6px 18px}
+.door.next{scroll-margin-top:24px;flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:6px 18px}
 .door.next p{flex:1 1 260px}
 .door.next .tag{margin-top:0;padding-top:0}
 .door{display:flex;flex-direction:column;gap:9px;min-height:132px;
@@ -128,7 +128,7 @@ a.door.sample:hover .tag,a.door.sample:focus-visible .tag{color:var(--org)}
       <div class="tag">Read the terms</div>
     </a>
 
-    <div class="door next">
+    <div class="door next" id="next">
       <div class="num">04</div>
       <h2>Next step</h2>
       <p>Questions, or a walkthrough on a call. Reply to Keenan and we will book

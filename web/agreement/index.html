@@ -148,6 +148,15 @@
   .sign{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:34px}
   .sigline{border-top:1px solid var(--div);padding-top:9px;font-size:11px;letter-spacing:.14em;
     text-transform:uppercase;color:var(--mut)}
+/* Same exit pattern as the console, the film and the deck. */
+  .exit{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 0}
+  .exit a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;
+    padding:13px 22px;border-radius:3px;text-decoration:none;border:1px solid;
+    font-family:"Orbitron",sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+  .exit a.go{background:var(--org);border-color:var(--org);color:#141414;font-weight:700}
+  .exit a.go:hover{background:#ff8a33}
+  .exit a.home{background:transparent;border-color:var(--div);color:var(--mut2)}
+  .exit a.home:hover{border-color:var(--org);color:var(--org)}
   footer{border-top:1px solid var(--div);margin-top:56px;padding-top:20px;
     font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
   .back{display:inline-flex;align-items:center;min-height:44px;margin:20px 0 0;color:var(--org);
@@ -170,6 +179,7 @@
 <div class="bar">
   <a class="dl" href="EverGuard-Partnership-Agreement.pdf" download>Download the PDF</a>
   <a class="dl ghost" href="#investment">Jump to investment</a>
+  <a class="dl ghost" href="../#next">Next step</a>
   <span style="font-size:12px;color:var(--mut)">The PDF is the plain version for your attorney.</span>
 </div>
 
@@ -490,7 +500,10 @@
     final agreement before signing.</p>
   </div>
 
-  <a class="back" href="../">&larr; Back to the proposal page</a>
+  <div class="exit">
+    <a class="go" href="../#next">Next step</a>
+    <a class="home" href="../">Home</a>
+  </div>
 </section>
 
 <footer>Prepared by Keenan Miller Technology Solutions with Joe CXO &nbsp;&middot;&nbsp; Prepared for Chris Calderon &nbsp;&middot;&nbsp; Confidential</footer>

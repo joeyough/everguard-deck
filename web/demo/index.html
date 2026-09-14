@@ -128,6 +128,18 @@ button.ctl:focus-visible{outline:2px solid var(--org);outline-offset:2px}
   text-transform:uppercase;transition:border-color .2s,color .2s}
 .after .ctl:hover{border-color:var(--org);color:var(--org)}
 .afternote{margin:12px 0 0;font-size:12.5px;color:var(--mut);max-width:62ch}
+/* One exit pattern everywhere: the next thing in the story, then home.
+   Never a link back to a proof she has already seen. */
+.exit{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 0}
+.exit a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;
+  padding:13px 22px;border-radius:3px;text-decoration:none;
+  font-family:"Orbitron",sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  border:1px solid;transition:border-color .2s,color .2s,background .2s}
+.exit a.go{background:#ff6a00;border-color:#ff6a00;color:#141414;font-weight:700}
+.exit a.go:hover{background:#ff8a33}
+.exit a.home{background:transparent;border-color:rgba(236,236,236,.16);color:rgba(236,236,236,.84)}
+.exit a.home:hover{border-color:#ff6a00;color:#ff6a00}
+.exit a:focus-visible{outline:2px solid #ff6a00;outline-offset:2px}
 .foot{margin:26px 0 0;padding-top:18px;border-top:1px solid var(--line);
   display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
 .foot a{color:var(--org);text-decoration:none;font-family:"Orbitron",sans-serif;
@@ -198,15 +210,14 @@ button.ctl:focus-visible{outline:2px solid var(--org);outline-offset:2px}
     renews a contract, because it shows what was paid for.</p>
   </div>
 
-  <div class="after">
-    <a class="ctl" href="./film/">See the fleet film</a>
-    <a class="ctl" href="../agreement/">Read the agreement</a>
+  <div class="exit">
+    <a class="go" href="./film/">See the fleet film</a>
+    <a class="home" href="../">Home</a>
   </div>
-  <p class="afternote">The film is a sample of the brand and web work, the kind
-  of thing your other sites would get. This console is the product.</p>
+  <p class="afternote">Next is a sample of the brand and web work, the kind of
+  thing your other sites would get. This console is the product.</p>
 
   <div class="foot">
-    <a href="../">&larr; Back to the proposal</a>
     <span class="note">Sample data. Prepared for Chris Calderon.</span>
   </div>
 
