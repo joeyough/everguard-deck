@@ -85,6 +85,11 @@
   @media (max-width:620px){
     .mrow{grid-template-columns:1fr 54px 54px 54px}
     .mrow .task{font-size:13px;padding:11px 10px}
+    /* On a narrow screen the inline "lead" tag widens one column and throws the
+       three markers out of line. Stack it under the dot instead. */
+    .mrow .c.lead:after{content:"LEAD";display:block;font-size:7.5px;letter-spacing:.08em;
+      margin-top:3px;color:var(--mut)}
+    .mrow .c{line-height:1}
   }
 
   /* 90 day steps */
