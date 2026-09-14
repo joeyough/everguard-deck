@@ -16,25 +16,31 @@ Live: **https://everguard-proposal.netlify.app**, behind a shared access code
 checked at the edge, so the site serves nothing without it. Ask Joey for the
 code. Nothing has been sent to the client yet.
 
-## Three pieces
+## Four doors
 
-| | Piece | Status |
+The landing page is the room, in story order. The console comes first on
+purpose: a brochure being opened is not proof, so the product proves the paper.
+
+| | Door | Where |
 |---|---|---|
-| 01 | **The deck** | Live at `/deck/`. |
-| 02 | **The agreement** | Scope and terms, the version that goes to a lawyer. Not drafted. |
-| 03 | **The demo** | Live at `/demo/`. EVERGUARD // ROLL CALL: five beats, the fleet livery flip with a contrast readout, the uniform spec, a live Oahu map and dispatch ticker. |
+| 01 | **The console** | `/demo/` One night, one alert, one closed report. |
+| 02 | **The team** | `/deck/` The partnership deck. |
+| 03 | **The agreement** | `/agreement/` Terms, plus a plain PDF for an attorney. |
+| 04 | **Next step** | On the landing page: reply to Keenan and book thirty minutes. |
 
-All three are wired to cards on `web/index.html`.
+## The console
 
-The demo ships with the design runtime (`support.js`) because its interactions
-depend on it, unlike the deck, which is flattened by `build.py`. Three things
-were changed in the hosted copy and are marked in the file: the close button
-pointed at `#partnership`, an anchor that does not exist anywhere in the page,
-and now returns to the proposal hub; the hover-only instruction became
-"explore the markers" because this opens on phones; and the fixed HUD blocks
-were given room at narrow widths, where the top-left readout collided with the
-clock and the build label collided with the sound toggle. The design file in
-`source/` is untouched.
+`web/demo/index.html` is hand-built, no framework and no design runtime. It
+plays a single incident: four cameras, motion on CAM 02, an analytics flag, an
+operator verifying, a timestamped voice-down, the subject leaving, cleared
+without dispatch, then an incident report with a timeline, evidence thumbnails
+and one line a client could be sent. Play, pause and replay. Everything sits in
+normal document flow, so there is no sticky stage and no scroll hijacking: the
+previous build put fixed furniture over the picture and it collided on phones.
+
+The earlier cinematic version, EVERGUARD // ROLL CALL, is kept at
+`web/demo/film/` and is not linked from anywhere. It is worth keeping for the
+HUD and the transitions, but a wrapped vehicle is packaging, not the product.
 
 ## Layout
 

@@ -2,89 +2,121 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow, noarchive">
-<title>EverGuard | Keenan Miller Technology Solutions + Joe CXO</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>EverGuard | Prepared for Chris Calderon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#191919; --ink:#ececec; --mut:rgba(236,236,236,.6); --mut2:rgba(236,236,236,.82);
-    --org:#ff6a00; --org-deep:#cc4e00; --div:rgba(236,236,236,.14); --card:#202020;
-  }
-  *{box-sizing:border-box}
-  html,body{max-width:100%;overflow-x:hidden}
-  main,header,footer{min-width:0}
-  body{
-    margin:0; min-height:100vh; background:radial-gradient(1500px 950px at 70% 6%,#232323 0%,#191919 60%);
-    color:var(--ink); font-family:"Montserrat",system-ui,-apple-system,sans-serif;
-    display:flex; flex-direction:column;
-  }
-  .slash{position:fixed;right:0;bottom:0;width:300px;height:300px;pointer-events:none;opacity:.85;
-    clip-path:polygon(100% 100%,100% 0,0 100%);
-    background:linear-gradient(315deg,#2b2b2b 0 10%,#202020 10% 20%,var(--org) 20% 21.8%,#2e2e2e 21.8% 32%,rgba(255,106,0,.4) 32% 33%,#222 33% 42%,transparent 42%)}
-  header{padding:44px 7vw 0;position:relative;z-index:1}
-  .brand{font-family:"Orbitron",sans-serif;font-weight:800;letter-spacing:.06em;font-size:clamp(17px,2.2vw,22px)}
-  .brand b{color:var(--org);font-weight:800}
-  .partners{margin-top:10px;font-size:clamp(9.5px,1.2vw,12px);letter-spacing:.14em;color:var(--mut);text-transform:uppercase;overflow-wrap:break-word}
-  main{flex:1;padding:6vh 7vw 40px;position:relative;z-index:1}
-  h1{font-family:"Orbitron",sans-serif;font-weight:700;font-size:clamp(22px,4.4vw,46px);line-height:1.14;margin:0 0 12px;overflow-wrap:break-word}
-  h1 span{color:var(--org)}
-  .lede{color:var(--mut2);max-width:60ch;font-size:clamp(14px,1.6vw,17px);line-height:1.6;margin:0 0 40px}
-  .cards{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));max-width:1100px}
-  .card{background:var(--card);border:1px solid var(--div);border-radius:4px;padding:26px 24px 22px;
-    display:flex;flex-direction:column;gap:10px;text-decoration:none;color:inherit;position:relative;
-    transition:border-color .18s ease,transform .18s ease}
-  a.card:hover{border-color:var(--org);transform:translateY(-2px)}
-  .num{font-family:"Orbitron",sans-serif;font-size:12px;letter-spacing:.2em;color:var(--org)}
-  .card h2{font-family:"Orbitron",sans-serif;font-weight:700;font-size:19px;margin:2px 0 0;letter-spacing:.02em}
-  .card p{margin:0;color:var(--mut);font-size:14px;line-height:1.55}
-  .tag{margin-top:auto;padding-top:16px;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
-  .live .tag{color:var(--org)}
-  .soon{opacity:.62}
-  .soon .tag{color:var(--mut)}
-  .soon h2{color:var(--mut2)}
-  footer{padding:0 7vw 34px;color:var(--mut);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;position:relative;z-index:1}
-  @media (max-width:640px){ .slash{width:180px;height:180px} header{padding-top:30px} }
+:root{
+  --bg:#141414; --panel:#1c1c1c; --ink:#ececec; --mut:rgba(236,236,236,.62);
+  --mut2:rgba(236,236,236,.84); --org:#ff6a00; --org-deep:#cc4e00;
+  --line:rgba(236,236,236,.10); --div:rgba(236,236,236,.16);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;max-width:100%;overflow-x:hidden;background:var(--bg)}
+body{color:var(--ink);font-family:"Montserrat",system-ui,-apple-system,sans-serif;
+  font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  background:radial-gradient(1400px 900px at 74% 0%,#1f1f1f 0%,#141414 60%);
+  padding-bottom:calc(30px + env(safe-area-inset-bottom,0px))}
+.wrap{max-width:1000px;margin:0 auto;padding:0 clamp(16px,4vw,28px)}
+h1,h2,.brand,.num,.tag,.foot a{font-family:"Orbitron",sans-serif}
+
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;
+  padding:calc(20px + env(safe-area-inset-top,0px)) 0 16px;border-bottom:1px solid var(--line)}
+.brand{font-weight:800;letter-spacing:.07em;font-size:16px;white-space:nowrap}
+.brand b{color:var(--org)}
+.firms{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+.spacer{flex:1 1 auto;min-width:0}
+.private{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);
+  border:1px solid var(--div);border-radius:99px;padding:5px 11px;white-space:nowrap}
+
+header{padding:clamp(34px,7vw,58px) 0 clamp(26px,5vw,40px)}
+.for{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--org)}
+h1{font-size:clamp(26px,5.4vw,46px);line-height:1.12;margin:12px 0 18px;font-weight:700}
+h1 span{color:var(--org)}
+.problem{color:var(--mut2);max-width:56ch;font-size:clamp(15px,1.9vw,17.5px);line-height:1.62;margin:0}
+.problem b{color:var(--ink);font-weight:600}
+
+.doors{display:grid;gap:12px;grid-template-columns:1fr;margin:0 0 30px}
+@media (min-width:720px){.doors{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1040px){.doors{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.door{display:flex;flex-direction:column;gap:9px;min-height:132px;
+  background:var(--panel);border:1px solid var(--div);border-radius:4px;
+  padding:20px 18px 18px;text-decoration:none;color:inherit;
+  transition:border-color .18s ease,transform .18s ease}
+a.door:hover,a.door:focus-visible{border-color:var(--org);transform:translateY(-2px);outline:none}
+a.door:focus-visible{outline:2px solid var(--org);outline-offset:2px}
+.num{font-size:11px;letter-spacing:.2em;color:var(--org);font-weight:700}
+.door h2{font-size:17px;margin:0;letter-spacing:.02em;font-weight:700}
+.door p{margin:0;color:var(--mut);font-size:13.5px;line-height:1.5}
+.tag{margin-top:auto;padding-top:14px;font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--org);min-height:22px}
+.door.next{background:transparent;border-style:dashed}
+.door.next .tag{color:var(--mut2)}
+
+.foot{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-wrap:wrap;
+  gap:10px 20px;align-items:center;justify-content:space-between}
+.foot .line{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
 </style>
 </head>
 <body>
-<div class="slash" aria-hidden="true"></div>
+<div class="wrap">
 
-<header>
-  <div class="brand">EVER<b>GUARD</b></div>
-  <div class="partners">Keenan Miller Technology Solutions &nbsp;|&nbsp; Joe CXO</div>
-</header>
+  <div class="bar">
+    <div class="brand">EVER<b>GUARD</b></div>
+    <div class="firms">Keenan Miller Technology Solutions &nbsp;|&nbsp; Joe CXO</div>
+    <div class="spacer"></div>
+    <div class="private">Private &middot; not for distribution</div>
+  </div>
 
-<main>
-  <h1>Prepared for <span>Chris Calderon</span></h1>
-  <p class="lede">Three pieces, all ready. Start wherever you like.</p>
+  <header>
+    <div class="for">Prepared for Chris Calderon</div>
+    <h1>Stronger solutions, <span>safer tomorrows.</span></h1>
+    <p class="problem">You did not get short on skill. <b>You got bigger than the
+    setup.</b> New clients, new sites, off the parent company, and the jobs still
+    run through you. Start with the console. It is the thing you are actually
+    selling.</p>
+  </header>
 
-  <div class="cards">
-    <a class="card live" href="./deck/">
+  <div class="doors">
+    <a class="door" href="./demo/">
       <div class="num">01</div>
-      <h2>Partnership deck</h2>
-      <p>The case, the two seats, and how the work runs. Seven slides.</p>
+      <h2>The console</h2>
+      <p>One night, one alert, one closed report. Run it yourself.</p>
+      <div class="tag">Run the incident</div>
+    </a>
+
+    <a class="door" href="./deck/">
+      <div class="num">02</div>
+      <h2>The team</h2>
+      <p>Who builds it, who works on the business, and why it is one team.</p>
       <div class="tag">Open the deck</div>
     </a>
 
-    <a class="card live" href="./agreement/">
-      <div class="num">02</div>
-      <h2>The agreement</h2>
-      <p>Scope, terms, and what each side owns. The version that goes to a
-      lawyer.</p>
-      <div class="tag">Read the agreement</div>
-    </a>
-
-    <a class="card live" href="./demo/">
+    <a class="door" href="./agreement/">
       <div class="num">03</div>
-      <h2>The demo</h2>
-      <p>Something you can click, built around your fleet and your colors. Not
-      a screenshot of somebody else's work.</p>
-      <div class="tag">Run the demo</div>
+      <h2>The agreement</h2>
+      <p>Scope, responsibility and terms. Download the version for your attorney.</p>
+      <div class="tag">Read the terms</div>
     </a>
-  </div>
-</main>
 
-<footer>Private. Prepared for Chris Calderon. Not for distribution.</footer>
+    <div class="door next">
+      <div class="num">04</div>
+      <h2>Next step</h2>
+      <p>Questions, or a walkthrough on a call. Reply to Keenan and we will book
+      thirty minutes.</p>
+      <div class="tag">Reply to Keenan</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="line">EverGuard &middot; O&#699;ahu</span>
+    <span class="line">Prepared for Chris Calderon &middot; Confidential</span>
+  </div>
+
+</div>
 </body>
 </html>

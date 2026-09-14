@@ -34,8 +34,8 @@
   .bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:16px 0 30px;
     border-bottom:1px solid var(--line);margin-bottom:44px}
   .dl{display:inline-flex;align-items:center;gap:9px;background:var(--org);color:#141414;
-    text-decoration:none;padding:11px 16px;border-radius:3px;font-weight:800;font-size:11.5px;
-    letter-spacing:.13em;text-transform:uppercase}
+    text-decoration:none;padding:13px 18px;border-radius:3px;font-weight:800;font-size:11.5px;
+    letter-spacing:.13em;text-transform:uppercase;min-height:46px}
   .dl:hover{background:#ff8a33}
   .dl.ghost{background:transparent;color:var(--mut2);border:1px solid var(--div)}
   .dl.ghost:hover{border-color:var(--org);color:var(--ink)}
@@ -65,7 +65,8 @@
   /* responsibility matrix */
   .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
   .pill{background:transparent;border:1px solid var(--div);color:var(--mut);border-radius:99px;
-    padding:7px 14px;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;cursor:pointer}
+    padding:7px 15px;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;
+    cursor:pointer;min-height:44px}
   .pill:hover{color:var(--ink);border-color:var(--mut)}
   .pill[aria-pressed="true"]{background:var(--org);border-color:var(--org);color:#141414}
   .matrix{border:1px solid var(--line);border-radius:3px;overflow:hidden}
@@ -138,7 +139,7 @@
     text-transform:uppercase;color:var(--org);margin-bottom:6px}
 
   .select{background:var(--paper);border:1px solid var(--div);border-radius:3px;padding:26px 24px}
-  .row{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
+  .row{display:flex;align-items:center;gap:14px;padding:13px 0;border-bottom:1px solid var(--line);min-height:46px;cursor:pointer}
   .row:last-of-type{border-bottom:0}
   .box{width:16px;height:16px;border:1.5px solid var(--mut);flex:0 0 auto}
   .row .what{flex:1;font-size:14.5px}
@@ -149,8 +150,8 @@
     text-transform:uppercase;color:var(--mut)}
   footer{border-top:1px solid var(--div);margin-top:56px;padding-top:20px;
     font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
-  .back{display:inline-block;margin:26px 0 0;color:var(--org);text-decoration:none;
-    font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+  .back{display:inline-flex;align-items:center;min-height:44px;margin:20px 0 0;color:var(--org);
+    text-decoration:none;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{transition:none !important}}
 </style>
 </head>
