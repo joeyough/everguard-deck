@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/classical-6e9ca1ff-08cb-4660-8816-6b0dfc9d76f2/styles.css" />
+<script src="_ds/classical-6e9ca1ff-08cb-4660-8816-6b0dfc9d76f2/_ds_bundle.js"></script>
+<title>A Safer Hawaiʻi — Keenan Miller × Joe CXO</title>
+<style>
+/* Deck scaffolding on the Classical tokens — colors, faces and rules all come from styles.css. */
+deck-stage { --pad-x: 120px; --ink55: color-mix(in srgb, var(--color-text) 55%, transparent); --ink70: color-mix(in srgb, var(--color-text) 70%, transparent); }
+.slide { display: flex; flex-direction: column; background: var(--color-bg); color: var(--color-text);
+  font-family: var(--font-body); text-wrap: pretty; padding: 184px var(--pad-x) 120px;
+  print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+/* — running head, foot, marginalia — */
+.head { position: absolute; top: 56px; left: var(--pad-x); right: var(--pad-x);
+  display: flex; align-items: baseline; justify-content: space-between; gap: 48px; }
+.caps { font-size: 24px; letter-spacing: 0.07em; text-transform: uppercase; }
+.mut { color: var(--ink55); }
+.a7 { color: var(--color-accent-700); }
+.kick { display: flex; align-items: baseline; gap: 22px; white-space: nowrap; }
+.kick .n { color: var(--color-accent); font-feature-settings: "tnum" 1; font-family: var(--font-heading); font-weight: 400; font-size: 60px; line-height: 0.72; letter-spacing: 0; }
+.kick .s { color: var(--ink55); }
+.bstack { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+.head-motto { color: var(--ink55); white-space: nowrap; }
+.brand { display: flex; align-items: baseline; gap: 24px; white-space: nowrap; }
+.brand .b1 { font-weight: 600; letter-spacing: 0.09em; }
+.brand .vr { width: 1px; height: 22px; background: var(--color-divider); align-self: center; }
+.foot { position: absolute; left: var(--pad-x); right: var(--pad-x); bottom: 58px;
+  display: flex; justify-content: space-between; align-items: baseline; gap: 48px;
+  border-top: 1px solid var(--color-divider); padding-top: 20px; }
+.foot span { font-size: 24px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink55); }
+.foot:not([style])::after { content: ""; position: absolute; left: calc(50% - 4px); top: 27px;
+  width: 8px; height: 8px; transform: rotate(45deg); border: 1px solid var(--color-accent); }
+.rail { position: absolute; top: 178px; right: var(--pad-x); border-left: 1px solid var(--color-accent);
+  padding-left: 22px; display: flex; flex-direction: column; gap: 12px; }
+.rail span { font-size: 24px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink55); }
+.ghost { position: absolute; top: 96px; right: 110px; font-family: var(--font-heading); font-weight: 400;
+  font-size: 330px; line-height: 0.8; letter-spacing: -0.02em; pointer-events: none;
+  color: color-mix(in srgb, var(--color-text) 6%, transparent); font-feature-settings: "tnum" 1; }
+/* — type — */
+.slide-title { font-family: var(--font-heading); font-weight: 400; font-size: 72px; line-height: 1.08;
+  letter-spacing: -0.01em; margin: 0 0 0 -0.04em; }
+.slide-title em, .ta { font-style: normal; color: var(--color-accent); }
+.content > .slide-title { position: relative; }
+.content > .slide-title::after { content: ""; position: absolute; left: 0.04em; bottom: -26px; width: 66px; height: 2px; background: var(--color-accent); }
+.lede { font-size: 28px; line-height: 1.5; margin: 0; text-align: justify; hyphens: auto; hyphenate-limit-chars: 6 3 3; }
+.lead { color: var(--color-accent-700); }
+.cols2 { position: relative; display: grid; grid-template-columns: 1fr 1fr; column-gap: 104px; }
+.cols2::before { content: ""; position: absolute; top: 0; bottom: 0; left: calc(50% - 0.5px); width: 1px; background: var(--color-divider); }
+.callout { border-left: 2px solid var(--color-accent); padding-left: 30px; }
+.callout p { font-family: var(--font-heading); font-weight: 400; font-size: 40px; line-height: 1.2; margin: 0; }
+.callout .co2 { color: var(--color-accent-700); }
+.ic { width: 26px; height: 26px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.75;
+  stroke-linecap: round; stroke-linejoin: round; color: var(--color-accent); }
+/* — cell grids (hairline-parted) — */
+.cellrow { display: grid; }
+.cellrow > div { border-left: 1px solid var(--color-divider); padding: 2px 32px; min-width: 0; }
+.cellrow > div:first-child { border-left: 0; padding-left: 0; }
+.cell-h { display: flex; align-items: center; gap: 14px; font-family: var(--font-heading); font-weight: 600;
+  font-size: 31px; line-height: 1.1; }
+.cell-b { font-size: 24px; line-height: 1.3; margin: 10px 0 0 40px; color: var(--ink70); }
+/* — slide 3 domain panel — */
+.panel-h { display: flex; align-items: baseline; gap: 36px; padding-bottom: 16px; border-bottom: 1px solid var(--color-divider); }
+.panel-h h3 { font-family: var(--font-heading); font-weight: 600; font-size: 38px; margin: 0; }
+.panel-sub { display: flex; gap: 30px; font-size: 22px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink55); }
+.p-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+.p-grid > div { padding: 14px 24px 16px; border-left: 1px solid var(--color-divider); min-width: 0; }
+.p-grid > div:nth-child(3n+1) { border-left: 0; padding-left: 0; }
+.p-grid > div:nth-child(n+4) { border-top: 1px solid var(--color-divider); }
+.p-head { display: flex; align-items: center; gap: 12px; font-size: 24px; letter-spacing: 0.05em; text-transform: uppercase; line-height: 1.15; }
+.p-head .ic { width: 24px; height: 24px; }
+.p-list { margin: 8px 0 0 36px; padding: 0; list-style: none; font-size: 24px; line-height: 1.22; color: var(--ink70); }
+.p-grid { counter-reset: pcell; }
+.p-grid > div { position: relative; counter-increment: pcell; }
+.p-grid > div::after { content: "0" counter(pcell); position: absolute; top: 14px; right: 18px;
+  font-family: var(--font-heading); font-weight: 400; font-size: 23px; color: var(--color-accent);
+  font-feature-settings: "tnum" 1; }
+.idx { counter-reset: cell; }
+.idx > div { position: relative; counter-increment: cell; }
+.idx > div::after { content: "0" counter(cell); position: absolute; top: 2px; right: 26px;
+  font-family: var(--font-heading); font-weight: 400; font-size: 23px; color: var(--color-accent);
+  font-feature-settings: "tnum" 1; }
+/* — slide 5 phases — */
+.phases { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); column-gap: 52px; }
+.phases::before { content: ""; position: absolute; left: 0; right: 0; top: 26px; height: 1px; background: var(--color-divider); }
+.ph { display: flex; flex-direction: column; min-height: 330px; }
+.ph-num { position: relative; width: 52px; height: 52px; border: 1.5px solid var(--color-accent); border-radius: 50%;
+  background: var(--color-bg); display: grid; place-items: center;
+  font-family: var(--font-heading); font-weight: 600; font-size: 27px; color: var(--color-accent-700); font-feature-settings: "tnum" 1; }
+.ph-num-hi { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-text); }
+.ph-h { font-family: var(--font-heading); font-weight: 600; font-size: 33px; line-height: 1.1; margin: 22px 0 0; }
+.ph-list { margin: 14px 0 0; padding: 0; list-style: none; font-size: 24px; line-height: 1.28; color: var(--ink70); }
+.ph-list li { text-indent: -0.664em; margin-left: 0.664em; margin-top: 6px; }
+.ph-list li::before { content: "• "; color: var(--color-accent); }
+.ph-wk { margin-top: auto; border-top: 1px solid var(--color-divider); padding-top: 14px;
+  font-size: 24px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink55); font-feature-settings: "tnum" 1; }
+/* — slide 6 duo — */
+.duo { display: grid; grid-template-columns: 1fr 400px 1fr; column-gap: 44px; }
+.duo-c { border-left: 1px solid var(--color-divider); border-right: 1px solid var(--color-divider);
+  padding: 0 36px; display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center; gap: 22px; }
+.duo-h { font-family: var(--font-heading); font-weight: 400; font-size: 50px; line-height: 1.08; margin: 0; letter-spacing: -0.01em; }
+.triad { margin-top: 14px; font-size: 24px; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink70); }
+.duo-p { font-size: 26px; line-height: 1.32; margin: 18px 0 0; text-align: justify; hyphens: auto; }
+.srows { margin-top: 26px; display: flex; flex-direction: column; gap: 13px; }
+.srow { display: grid; grid-template-columns: 40px 1fr; column-gap: 0; }
+.srow .ic { width: 25px; height: 25px; margin-top: 2px; }
+.srow h4 { font-family: var(--font-body); font-weight: 600; font-size: 24px; letter-spacing: 0.04em;
+  text-transform: uppercase; margin: 0; line-height: 1.1; }
+.srow p { font-size: 24px; line-height: 1.18; margin: 3px 0 0; color: var(--ink70); }
+.plus-circ { width: 76px; height: 76px; border: 1.5px solid var(--color-accent); border-radius: 50%; display: grid; place-items: center; outline: 1px solid var(--color-divider); outline-offset: 10px; }
+.plus-circ .ic { width: 30px; height: 30px; }
+.duo-c h3 { font-family: var(--font-heading); font-weight: 400; font-size: 44px; line-height: 1.12; margin: 0; }
+.duo-c .rule { width: 64px; height: 1px; background: var(--color-accent); }
+.duo-c .mid { font-size: 24px; line-height: 1.4; margin: 0; }
+.duo-c .quiet { font-size: 24px; line-height: 1.5; margin: 0; color: var(--ink55); }
+/* — slide 7 tiers — */
+.tband { display: flex; flex-direction: column; padding: 11px 0 12px; }
+.tband > * { min-width: 0; }
+.t-kick span { white-space: nowrap; }
+.t-top { display: flex; align-items: center; gap: 20px; }
+.t-body { display: grid; grid-template-columns: 560px 1fr; column-gap: 40px; margin-top: 10px; align-items: start; }
+.t-cols { display: grid; grid-template-columns: 1fr 1fr; column-gap: 36px; align-items: start; }
+.tband-rec { background: var(--color-accent-100); padding-inline: 28px; margin-inline: -28px; border-left: 3px solid var(--color-accent); }
+.tband + .tband { border-top: 1px solid var(--color-divider); }
+.t-kick { display: inline-flex; align-items: center; white-space: nowrap; font-size: 22px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--color-accent); font-feature-settings: "tnum" 1; }
+.t-name { font-family: var(--font-heading); font-weight: 600; font-size: 33px; line-height: 1; margin: 0; }
+.t-tag { font-size: 21px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink55); margin: 0; }
+.t-price { font-family: var(--font-heading); font-weight: 600; font-size: 38px; line-height: 1; margin: 0 0 0 auto; white-space: nowrap; font-feature-settings: "tnum" 1; }
+.t-per { font-size: 22px; color: var(--ink55); }
+.t-desc { font-size: 22px; line-height: 1.27; margin: 0; color: var(--ink70); }
+.t-list { margin: 0; padding: 0; list-style: none; font-size: 22px; line-height: 1.18; display: flex; flex-direction: column; gap: 7px; }
+.t-list li { display: flex; gap: 10px; }
+.t-list .ic { width: 17px; height: 17px; margin-top: 3px; }
+.tag-rec { font-size: 17px; letter-spacing: 0.08em; padding: 3px 11px; }
+.slide .btn { font-size: 20px; letter-spacing: 0.05em; padding: 7px 16px; }
+.vals { display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 40px;
+  border-top: 1px solid var(--color-divider); padding-top: 12px; }
+.vals h4 { font-family: var(--font-body); font-weight: 600; font-size: 21px; letter-spacing: 0.05em;
+  text-transform: uppercase; margin: 0; display: flex; align-items: center; gap: 12px; line-height: 1.1; }
+.vals .ic { width: 24px; height: 24px; }
+.vals p { font-size: 21px; line-height: 1.2; margin: 5px 0 0; color: var(--ink55); }
+/* — cover — */
+.cover { justify-content: center; padding-top: 120px;
+  background: color-mix(in srgb, var(--color-neutral-900) 85%, black); color: var(--color-bg);
+  --ink55: color-mix(in srgb, var(--color-bg) 62%, transparent);
+  --ink70: color-mix(in srgb, var(--color-bg) 80%, transparent);
+  --color-divider: color-mix(in srgb, var(--color-bg) 25%, transparent); }
+.cover::before { content: ""; position: absolute; inset: 32px; pointer-events: none;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 60%, transparent); }
+.cover::after { content: ""; position: absolute; inset: 41px; pointer-events: none;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 28%, transparent); }
+.cover-brand { position: absolute; top: 56px; left: var(--pad-x); display: flex; align-items: center; gap: 28px; }
+.cover-brand .lock1 { font-size: 27px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+.cover-brand .lock2 { font-size: 22px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink55); margin-top: 6px; }
+.cover-brand .vr { width: 1px; height: 58px; background: var(--color-divider); }
+.cover-brand .pw1 { font-size: 22px; color: var(--ink55); }
+.cover-brand .pw2 { font-family: var(--font-heading); font-weight: 600; font-size: 32px; margin-top: 2px; }
+.cover-copy { width: 1160px; display: flex; flex-direction: column; }
+.prep { display: flex; flex-direction: column; gap: 12px; }
+.prep .p1 { font-size: 24px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); }
+.prep .p2 { font-family: var(--font-heading); font-weight: 600; font-size: 40px; }
+.display { font-family: var(--font-heading); font-weight: 400; font-size: 128px; line-height: 1.06;
+  letter-spacing: -0.015em; margin: 44px 0 0 -0.04em; }
+.cover-icons { display: flex; align-items: center; margin-top: 56px; border-top: 1px solid var(--color-divider); padding-top: 30px; gap: 0; }
+.cover-icons .cidiv { width: 1px; height: 34px; background: var(--color-divider); margin: 0 30px; }
+.cover-icons span { display: flex; align-items: center; gap: 12px; font-size: 24px; letter-spacing: 0.05em;
+  text-transform: uppercase; white-space: nowrap; }
+.cover-fig { position: absolute; top: 352px; right: var(--pad-x); bottom: 140px; width: 590px; }
+.cover-fig image-slot { width: 100%; height: 100%; }
+.cover-fig.plate { border-width: 12px; }
+.cover-foot { position: absolute; right: var(--pad-x); bottom: 58px; font-size: 24px; letter-spacing: 0.07em;
+  text-transform: uppercase; color: var(--ink55); }
+@media (prefers-reduced-motion: no-preference) {
+  [data-deck-active] .rise { animation: rise 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+}
+</style>
+</helmet>
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
+
+  <section class="slide cover" data-label="01 · Cover" data-screen-label="01">
+    <div class="cover-brand">
+      <div><div class="lock1">Keenan Miller</div><div class="lock2">Technology Solutions</div></div>
+      <div class="vr"></div>
+      <div><div class="pw1">In Partnership with</div><div class="pw2">Joe CXO</div></div>
+    </div>
+    <div class="rail"><span>Secure</span><span>Operate</span><span>Grow</span></div>
+    <div class="cover-copy rise">
+      <div class="prep"><span class="p1">Prepared for</span><span class="p2">Chris Calderon</span></div>
+      <h1 class="display">A safer Hawaiʻi<br /><em class="ta">brighter tomorrows</em></h1>
+      <div class="cover-icons">
+        <span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>Security</span>
+        <span class="cidiv"></span>
+        <span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>People</span>
+        <span class="cidiv"></span>
+        <span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>Property</span>
+        <span class="cidiv"></span>
+        <span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/></svg>Operations</span>
+        <span class="cidiv"></span>
+        <span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M8 17v-3"/><path d="M13 17V9"/><path d="M18 17V5"/></svg>Growth</span>
+      </div>
+    </div>
+    <div class="cover-foot">Same island. Bigger possibilities.</div>
+  </section>
+
+  <section class="slide content" data-label="02 · The next chapter" data-screen-label="02">
+    <div class="head">
+      <div class="kick caps"><span class="n">02</span><span class="s">The next chapter</span></div>
+      <div class="brand caps"><span class="b1">Keenan Miller Technology Solutions</span><span class="vr"></span><span class="mut">In Partnership with Joe CXO</span></div>
+    </div>
+    <div class="rail"><span>People</span><span>Property</span><span>Community</span><span>Opportunity</span></div>
+    <h2 class="slide-title">Your business is entering<br /><em>its next chapter.</em></h2>
+    <div class="rise" style="max-width: 1180px; margin-top: 46px; display: flex; flex-direction: column; gap: 30px;">
+      <p class="lede"><span class="lead">You’re growing. You’ve won new business.</span> You’re gaining greater independence. And you’re expanding what you can offer.</p>
+      <p class="lede">With that growth comes a natural next step: making sure the technology, information systems, physical infrastructure and business structure underneath it are ready to grow with you.</p>
+    </div>
+    <div class="cellrow rise" style="grid-template-columns: repeat(4, 1fr); margin-top: 52px;">
+      <div>
+        <div class="cell-h"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>New clients</div>
+        <p class="cell-b">Expanding relationships &amp; responsibilities</p>
+      </div>
+      <div>
+        <div class="cell-h"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M8 17v-3"/><path d="M13 17V9"/><path d="M18 17V5"/></svg>New capabilities</div>
+        <p class="cell-b">Security, surveillance &amp; technology consulting</p>
+      </div>
+      <div>
+        <div class="cell-h"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/></svg>Greater independence</div>
+        <p class="cell-b">Transitioning beyond the former parent organization</p>
+      </div>
+      <div>
+        <div class="cell-h"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>New infrastructure</div>
+        <p class="cell-b">Offices, dispatch, surveillance &amp; digital systems</p>
+      </div>
+    </div>
+    <div class="callout rise" style="margin-top: 46px;">
+      <p class="co1">You’re building something bigger.</p>
+      <p class="co2">Our job is to make sure the infrastructure underneath that growth is built just as intentionally.</p>
+    </div>
+    <sc-if value="{{ showMottos }}" hint-placeholder-val="{{ true }}">
+    <div class="foot"><span>Same island. Bigger possibilities.</span><span>A safer Hawaiʻi builds a brighter tomorrow.</span></div>
+    </sc-if>
+  </section>
+
+  <section class="slide content" data-label="03 · A broader scope" data-screen-label="03">
+    <div class="ghost" aria-hidden="true">03</div>
+    <div class="head">
+      <div class="kick caps"><span class="n">03</span><span class="s">A broader scope</span></div>
+      <div class="bstack"><div class="brand caps"><span class="b1">Keenan Miller Technology Solutions</span><span class="vr"></span><span class="mut">In Partnership with Joe CXO</span></div><div class="head-motto caps">Stronger solutions. Safer tomorrows.</div></div>
+    </div>
+    <h2 class="slide-title">More opportunity. More responsibility.<br /><em>A more connected business.</em></h2>
+    <div style="display: grid; grid-template-columns: 430px 1fr; column-gap: 60px; margin-top: 36px; align-items: start;">
+      <div class="rise" style="display: flex; flex-direction: column; gap: 24px; min-height: 520px;">
+        <p style="font-size: 25px; line-height: 1.35; margin: 0; text-align: justify; hyphens: auto;">As you take on new clients, separate operations from the former parent organization, and expand into new opportunities, more pieces of the business begin depending on one another.</p>
+        <p style="font-size: 25px; line-height: 1.35; margin: 0; text-align: justify; hyphens: auto;">From data and systems to offices, dispatch, client support and vendors — it’s all connected.</p>
+        <p style="font-size: 25px; line-height: 1.35; margin: 0; text-align: justify; hyphens: auto;">The opportunity is to build it as one integrated operation, not a collection of separate projects.</p>
+        <div class="callout" style="margin-top: auto;">
+          <p class="co1" style="font-size: 36px;">A stronger foundation</p>
+          <p class="co2" style="font-size: 36px;">for what comes next.</p>
+        </div>
+      </div>
+      <div class="rise">
+        <div class="panel-h">
+          <h3>Your business</h3>
+          <div class="panel-sub"><span>Expanded scope</span><span>Greater opportunity</span><span>Brighter future</span></div>
+        </div>
+        <div class="p-grid">
+          <div>
+            <div class="p-head"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Clients &amp; relationships</div>
+            <ul class="p-list"><li>Existing clients</li><li>Newly acquired clients</li><li>Expanding opportunities</li></ul>
+          </div>
+          <div>
+            <div class="p-head"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>Data &amp; information</div>
+            <ul class="p-list"><li>Microsoft 365</li><li>SharePoint</li><li>File transition &amp; security</li></ul>
+          </div>
+          <div>
+            <div class="p-head"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>Business entities</div>
+            <ul class="p-list"><li>Structure &amp; separation</li><li>Policies &amp; compliance</li><li>Financial alignment</li></ul>
+          </div>
+          <div>
+            <div class="p-head"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>Infrastructure</div>
+            <ul class="p-list"><li>Cloud &amp; endpoints</li><li>Networks &amp; connectivity</li><li>Security &amp; backup</li></ul>
+          </div>
+          <div>
+            <div class="p-head"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg>Surveillance &amp; access</div>
+            <ul class="p-list"><li>Camera systems</li><li>Access control</li><li>Monitoring infrastructure</li></ul>
+          </div>
+          <div>
+            <div class="p-head"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2"/><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.2 19.1 19.1"/></svg>Dispatch &amp; communications</div>
+            <ul class="p-list"><li>Communication systems</li><li>Field support</li><li>Real-time visibility</li></ul>
+          </div>
+          <div>
+            <div class="p-head"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>Websites &amp; digital</div>
+            <ul class="p-list"><li>Company sites</li><li>Client portals</li><li>Brand &amp; communications</li></ul>
+          </div>
+          <div>
+            <div class="p-head"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>Offices &amp; facilities</div>
+            <ul class="p-list"><li>Physical locations</li><li>Network &amp; Wi-Fi</li><li>Systems &amp; workspace tech</li></ul>
+          </div>
+          <div>
+            <div class="p-head"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></svg>Vendors &amp; partners</div>
+            <ul class="p-list"><li>Technology vendors</li><li>Equipment &amp; licensing</li><li>Ongoing support</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <sc-if value="{{ showMottos }}" hint-placeholder-val="{{ true }}">
+    <div class="foot"><span>Same island. Bigger possibilities.</span><span>A safer Hawaiʻi builds a brighter tomorrow.</span></div>
+    </sc-if>
+  </section>
+
+  <section class="slide content" data-label="04 · The solution approach" data-screen-label="04">
+    <div class="ghost" aria-hidden="true">04</div>
+    <div class="head">
+      <div class="kick caps"><span class="n">04</span><span class="s">The solution approach</span></div>
+      <div class="bstack"><div class="brand caps"><span class="b1">Keenan Miller Technology Solutions</span><span class="vr"></span><span class="mut">In Partnership with Joe CXO</span></div><div class="head-motto caps">Stronger solutions. Safer tomorrows.</div></div>
+    </div>
+    <h2 class="slide-title">Integrated systems <em>for real-world impact.</em></h2>
+    <div class="cols2 rise" style="margin-top: 46px;">
+      <p class="lede">We design and implement technology systems that connect your people, information and operations — so you can deliver security solutions more effectively, support new clients, and run a stronger, more independent business.</p>
+      <p class="lede">From surveillance and access-control systems to cloud infrastructure, communications and data management, we build the backbone that helps you operate, respond and grow.</p>
+    </div>
+    <div class="callout rise" style="margin-top: 44px;">
+      <p class="co1" style="font-size: 36px;">All the pieces working together.</p>
+      <p class="co2" style="font-size: 36px;">So you can focus on what matters most.</p>
+    </div>
+    <div class="cellrow idx rise" style="grid-template-columns: repeat(3, 1fr); row-gap: 44px; margin-top: 50px;">
+      <div>
+        <div class="cell-h"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg>Surveillance &amp; monitoring systems</div>
+        <p class="cell-b">Scalable camera systems, remote access and centralized monitoring</p>
+      </div>
+      <div>
+        <div class="cell-h"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Access control &amp; facility technology</div>
+        <p class="cell-b">Secure facilities, manage access, improve visibility</p>
+      </div>
+      <div>
+        <div class="cell-h"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>Cloud &amp; data infrastructure</div>
+        <p class="cell-b">Microsoft 365, SharePoint, secure file management and backup</p>
+      </div>
+      <div>
+        <div class="cell-h"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2"/><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.2 19.1 19.1"/></svg>Communications &amp; dispatch support</div>
+        <p class="cell-b">Systems that keep teams connected and coordinated</p>
+      </div>
+      <div>
+        <div class="cell-h"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>Client &amp; operational platforms</div>
+        <p class="cell-b">Websites, client portals and business tools</p>
+      </div>
+      <div>
+        <div class="cell-h"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></svg>Vendor &amp; device integration</div>
+        <p class="cell-b">Equipment, licensing and ongoing support</p>
+      </div>
+    </div>
+    <sc-if value="{{ showMottos }}" hint-placeholder-val="{{ true }}">
+    <div class="foot"><span>Same island. Bigger possibilities.</span><span>A safer Hawaiʻi builds a brighter tomorrow.</span></div>
+    </sc-if>
+  </section>
+
+  <section class="slide content" data-label="05 · The path forward" data-screen-label="05">
+    <div class="ghost" aria-hidden="true">05</div>
+    <div class="head">
+      <div class="kick caps"><span class="n">05</span><span class="s">The path forward</span></div>
+      <div class="bstack"><div class="brand caps"><span class="b1">Keenan Miller Technology Solutions</span><span class="vr"></span><span class="mut">In Partnership with Joe CXO</span></div><div class="head-motto caps">Stronger solutions. Safer tomorrows.</div></div>
+    </div>
+    <h2 class="slide-title">A clear roadmap <em>from vision to reality.</em></h2>
+    <div class="cols2 rise" style="margin-top: 46px;">
+      <p class="lede">We take a practical, phased approach to design and implement the systems your business needs — so you can keep moving forward while we build for what’s next.</p>
+      <p class="lede">From assessing your current environment to full implementation and ongoing support, we focus on real solutions, measurable progress and long-term impact.</p>
+    </div>
+    <div class="phases rise" style="margin-top: 46px;">
+      <div class="ph">
+        <div class="ph-num ph-num-hi">1</div>
+        <h3 class="ph-h">Discover &amp; align</h3>
+        <ul class="ph-list"><li>Understand your goals</li><li>Assess current systems</li><li>Identify priorities and quick wins</li></ul>
+        <div class="ph-wk">Weeks 1–2</div>
+      </div>
+      <div class="ph">
+        <div class="ph-num">2</div>
+        <h3 class="ph-h">Plan &amp; design</h3>
+        <ul class="ph-list"><li>Develop solution architecture</li><li>Define scopes &amp; timelines</li><li>Align with business and client needs</li></ul>
+        <div class="ph-wk">Weeks 3–6</div>
+      </div>
+      <div class="ph">
+        <div class="ph-num">3</div>
+        <h3 class="ph-h">Implement &amp; transition</h3>
+        <ul class="ph-list"><li>Deploy systems</li><li>Migrate and secure data</li><li>Configure infrastructure</li><li>Train and support your team</li></ul>
+        <div class="ph-wk">Weeks 8–12+</div>
+      </div>
+      <div class="ph">
+        <div class="ph-num">4</div>
+        <h3 class="ph-h">Optimize &amp; support</h3>
+        <ul class="ph-list"><li>Monitor and refine systems</li><li>Provide ongoing support</li><li>Address new needs</li><li>Ensure reliability and security</li></ul>
+        <div class="ph-wk">Ongoing</div>
+      </div>
+      <div class="ph">
+        <div class="ph-num">5</div>
+        <h3 class="ph-h">Grow together</h3>
+        <ul class="ph-list"><li>Support new clients</li><li>Expand capabilities</li><li>Adapt to new opportunities</li><li>Continue building a stronger, more independent business</li></ul>
+        <div class="ph-wk">Always</div>
+      </div>
+    </div>
+    <div class="callout rise" style="margin-top: 34px;">
+      <p class="co1" style="font-size: 36px;">Pragmatic steps.</p>
+      <p class="co2" style="font-size: 36px;">Lasting results.</p>
+    </div>
+    <sc-if value="{{ showMottos }}" hint-placeholder-val="{{ true }}">
+    <div class="foot" style="border-top: 0; justify-content: flex-end;"><span>A safer Hawaiʻi builds a brighter tomorrow.</span></div>
+    </sc-if>
+  </section>
+
+  <section class="slide content" data-label="06 · Our partnership" data-screen-label="06" style="padding-top: 168px;">
+    <div class="ghost" aria-hidden="true">06</div>
+    <div class="head">
+      <div class="kick caps"><span class="n">06</span><span class="s">Our partnership</span></div>
+      <div class="bstack"><div class="brand caps"><span class="b1">Keenan Miller Technology Solutions</span><span class="vr"></span><span class="mut">In Partnership with Joe CXO</span></div><div class="head-motto caps">Stronger solutions. Safer tomorrows.</div></div>
+    </div>
+    <div class="duo">
+      <div class="rise">
+        <h2 class="duo-h">Keenan builds <em class="ta">the systems.</em></h2>
+        <div class="triad">Technology. Execution. Local Presence.</div>
+        <p class="duo-p">I design, implement and support the technology that keeps your business secure, connected and running — so you can focus on what you do best.</p>
+        <div class="srows">
+          <div class="srow"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="12" x="3" y="4" rx="2" ry="2"/><line x1="2" x2="22" y1="20" y2="20"/></svg><div><h4>Technology strategy</h4><p>Recommend the right solutions for your goals</p></div></div>
+          <div class="srow"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg><div><h4>Systems &amp; infrastructure</h4><p>Networks, endpoints, cloud and connectivity</p></div></div>
+          <div class="srow"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg><div><h4>Cloud, data &amp; digital</h4><p>Microsoft 365, SharePoint, backup and file management</p></div></div>
+          <div class="srow"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></svg><div><h4>Security operations technology</h4><p>Surveillance systems, access control and monitoring technology</p></div></div>
+          <div class="srow"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg><div><h4>Project execution</h4><p>Plan, deploy, migrate and integrate systems</p></div></div>
+          <div class="srow"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></svg><div><h4>Local &amp; ongoing support</h4><p>Troubleshoot, maintain and evolve as your needs grow</p></div></div>
+        </div>
+      </div>
+      <div class="duo-c rise">
+        <div class="plus-circ"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg></div>
+        <div><h3>Two perspectives.</h3><h3 class="a7">One stronger business.</h3></div>
+        <div class="rule"></div>
+        <p class="mid">Keenan builds the systems. Joey helps determine what systems the business actually needs.</p>
+        <p class="quiet">One partnership.<br />Two complementary perspectives.<br />Execution inside the technology.<br />Strategy across the business.</p>
+      </div>
+      <div class="rise">
+        <h2 class="duo-h">Joey helps determine <em class="ta">what drives the business.</em></h2>
+        <div class="triad">Operations. Strategy. Growth.</div>
+        <p class="duo-p">I bring a business and executive lens to make sure your technology investments align with your operations, finances and long-term goals — so you can grow with clarity and confidence.</p>
+        <div class="srows">
+          <div class="srow"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg><div><h4>Business structure</h4><p>Entity planning, compliance and documentation</p></div></div>
+          <div class="srow"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/></svg><div><h4>Operations &amp; process improvement</h4><p>Optimize workflows and organizational efficiency</p></div></div>
+          <div class="srow"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg><div><h4>Financial &amp; cost efficiency</h4><p>Budgeting, vendor strategy and ROI planning</p></div></div>
+          <div class="srow"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg><div><h4>Growth planning</h4><p>Identify and pursue new markets and opportunities</p></div></div>
+          <div class="srow"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><div><h4>Partnership evaluation</h4><p>Assess and structure strategic relationships</p></div></div>
+          <div class="srow"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg><div><h4>Executive strategy</h4><p>Turn vision into a practical, measurable roadmap</p></div></div>
+        </div>
+      </div>
+    </div>
+    <sc-if value="{{ showMottos }}" hint-placeholder-val="{{ true }}">
+    <div class="foot"><span>Same island. Bigger possibilities.</span><span>A safer Hawaiʻi builds a brighter tomorrow.</span></div>
+    </sc-if>
+  </section>
+
+  <section class="slide content" data-label="07 · Partnership options" data-screen-label="07" style="padding-top: 150px;">
+    <div class="ghost" aria-hidden="true">07</div>
+    <div class="head">
+      <div class="kick caps"><span class="n">07</span><span class="s">Partnership options</span></div>
+      <div class="bstack"><div class="brand caps"><span class="b1">Keenan Miller Technology Solutions</span><span class="vr"></span><span class="mut">In Partnership with Joe CXO</span></div><div class="head-motto caps">Stronger solutions. Safer tomorrows.</div></div>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 560px; column-gap: 80px; align-items: end;">
+      <h2 class="slide-title" style="font-size: 60px;">Three ways to move <em>forward.</em></h2>
+      <p class="rise" style="font-size: 24px; line-height: 1.3; margin: 0; color: var(--ink70);">Same goal. Different levels of involvement. Choose the partnership that fits where you are — and where you want to go.</p>
+    </div>
+    <div class="rise" style="margin-top: 18px; border-top: 1px solid var(--color-divider);">
+      <div class="tband {{ band1Mod }}">
+        <div class="t-top">
+          <span class="t-kick">Tier 1</span>
+          <h3 class="t-name">Support</h3>
+          <span class="t-tag">Keep things running.</span>
+          <sc-if value="{{ rec1 }}" hint-placeholder-val="{{ false }}"><span class="tag tag-accent tag-rec">Recommended</span></sc-if>
+          <p class="t-price">$2,000<span class="t-per"> / month</span></p>
+          <span class="btn btn-primary">Choose Support</span>
+        </div>
+        <div class="t-body">
+        <p class="t-desc">Essential technology support when you need it. Stay secure, connected and productive without a long-term commitment.</p>
+        <div class="t-cols">
+        <ul class="t-list">
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>On-demand IT support</span></li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>General technology guidance</span></li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Basic system maintenance</span></li>
+        </ul>
+        <ul class="t-list">
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Vendor coordination (as needed)</span></li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Email &amp; remote support</span></li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Ideal for: staying supported while you handle day-to-day operations</span></li>
+        </ul>
+        </div>
+        </div>
+      </div>
+      <div class="tband {{ band2Mod }}">
+        <div class="t-top">
+          <span class="t-kick">Tier 2</span>
+          <h3 class="t-name">Ownership</h3>
+          <span class="t-tag">Taking it further.</span>
+          <sc-if value="{{ rec2 }}" hint-placeholder-val="{{ false }}"><span class="tag tag-accent tag-rec">Recommended</span></sc-if>
+          <p class="t-price">$5,500<span class="t-per"> / month</span></p>
+          <span class="btn btn-primary">Choose Ownership</span>
+        </div>
+        <div class="t-body">
+        <p class="t-desc">Proactively manage and improve your technology environment. We take ownership of the systems so you can focus on your clients and your business.</p>
+        <div class="t-cols">
+        <ul class="t-list">
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Everything in Support, plus:</span></li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Proactive system management</span></li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Microsoft 365 &amp; cloud administration</span></li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Security oversight and monitoring</span></li>
+        </ul>
+        <ul class="t-list">
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Website and digital tools support</span></li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Process improvement recommendations</span></li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Regular strategy check-ins</span></li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Ideal for: businesses ready to hand off technology management</span></li>
+        </ul>
+        </div>
+        </div>
+      </div>
+      <div class="tband {{ band3Mod }}">
+        <div class="t-top">
+          <span class="t-kick">Tier 3</span>
+          <h3 class="t-name">Transformation</h3>
+          <span class="t-tag">Built for what’s next.</span>
+          <sc-if value="{{ rec3 }}" hint-placeholder-val="{{ true }}"><span class="tag tag-accent tag-rec">Recommended</span></sc-if>
+          <p class="t-price">$10,000<span class="t-per"> / month</span></p>
+          <span class="btn btn-primary">Choose Transformation</span>
+        </div>
+        <div class="t-body">
+        <p class="t-desc">A complete partnership to align your technology, operations and business structure for long-term growth. We bring the strategy and execution to help you scale with confidence.</p>
+        <div class="t-cols">
+        <ul class="t-list">
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Everything in Ownership, plus:</span></li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Executive strategy and advisory</span></li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Business operations and process optimization</span></li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Financial structure and cost efficiency</span></li>
+        </ul>
+        <ul class="t-list">
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Entity planning and compliance support</span></li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Growth planning and new opportunities</span></li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Ongoing partnership with Keenan + Joe</span></li>
+          <li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Ideal for: business owners ready to streamline, scale and build what’s next</span></li>
+        </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="vals rise" style="margin-top: 8px;">
+      <div><h4><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/></svg>Flexible paths</h4><p>Start where you are. Move as you grow.</p></div>
+      <div><h4><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 20V6a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v14"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>Real-world experience</h4><p>Practical solutions. Measurable results.</p></div>
+      <div><h4><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>A safer, stronger business</h4><p>Built on stability, efficiency and growth.</p></div>
+      <div><h4><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg>Long-term impact</h4><p>More time for what matters most.</p></div>
+    </div>
+    <sc-if value="{{ showMottos }}" hint-placeholder-val="{{ true }}">
+    <div class="foot" style="border-top: 0; bottom: 34px;"><span>Same island. Bigger possibilities.</span><span>A safer Hawaiʻi builds a brighter tomorrow.</span></div>
+    </sc-if>
+  </section>
+
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;recommendedTier&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;Support&quot;, &quot;Ownership&quot;, &quot;Transformation&quot;], &quot;default&quot;: &quot;Transformation&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Pricing&quot;}, &quot;showMottos&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Page furniture&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const tier = this.props.recommendedTier ?? 'Transformation';
+    return {
+      rec1: tier === 'Support',
+      rec2: tier === 'Ownership',
+      rec3: tier === 'Transformation',
+      band1Mod: tier === 'Support' ? 'tband-rec' : '',
+      band2Mod: tier === 'Ownership' ? 'tband-rec' : '',
+      band3Mod: tier === 'Transformation' ? 'tband-rec' : '',
+      showMottos: this.props.showMottos ?? true,
+    };
+  }
+}
+</script>
+</body>
+</html>
