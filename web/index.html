@@ -42,6 +42,13 @@ h1 span{color:var(--org)}
 .doors{display:grid;gap:12px;grid-template-columns:1fr;margin:0 0 30px}
 @media (min-width:720px){.doors{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (min-width:1040px){.doors{grid-template-columns:repeat(4,minmax(0,1fr))}}
+/* Five cards into four columns: the console and the film take the first two
+   slots so they stay adjacent, and Next step runs the full width underneath as
+   a call to action rather than a stranded fifth column. */
+@media (min-width:720px){.door.next{grid-column:1 / -1;min-height:0}}
+.door.next{flex-direction:row;flex-wrap:wrap;align-items:baseline;gap:6px 18px}
+.door.next p{flex:1 1 260px}
+.door.next .tag{margin-top:0;padding-top:0}
 .door{display:flex;flex-direction:column;gap:9px;min-height:132px;
   background:var(--panel);border:1px solid var(--div);border-radius:4px;
   padding:20px 18px 18px;text-decoration:none;color:inherit;
@@ -56,12 +63,16 @@ a.door:focus-visible{outline:2px solid var(--org);outline-offset:2px}
 .door.next{background:transparent;border-style:dashed}
 .door.next .tag{color:var(--mut2)}
 
-.stack{display:flex;flex-direction:column;gap:8px}
-.stack .door{flex:1 1 auto}
-.sub-link{display:inline-flex;align-items:center;min-height:44px;padding:2px 4px;
-  color:var(--mut);text-decoration:none;font-size:12px;letter-spacing:.1em}
-.sub-link:hover,.sub-link:focus-visible{color:var(--org)}
-.sample{color:var(--mut);letter-spacing:.12em}
+/* The fleet film is a twin of the numbered doors, not a leftover text link.
+   Same border, same type, same hover. It carries the word SAMPLE where the
+   others carry a number, which is what ranks it without inventing a second
+   visual language on the page. */
+.door.sample{background:transparent}
+.door.sample .num{color:var(--mut);letter-spacing:.18em;text-transform:uppercase}
+.door.sample h2{color:var(--mut2)}
+.door.sample .tag{color:var(--mut2)}
+a.door.sample:hover .tag,a.door.sample:focus-visible .tag{color:var(--org)}
+.sample-note{color:var(--mut);letter-spacing:.12em}
 .foot{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-wrap:wrap;
   gap:10px 20px;align-items:center;justify-content:space-between}
 .foot .line{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
@@ -73,7 +84,7 @@ a.door:focus-visible{outline:2px solid var(--org);outline-offset:2px}
 
   <div class="bar">
     <div class="brand">EVER<b>GUARD</b></div>
-    <div class="firms">Keenan Miller Technology Solutions &nbsp;|&nbsp; Joe CXO<br><span class="sample">This site is the sample.</span></div>
+    <div class="firms">Keenan Miller Technology Solutions &nbsp;|&nbsp; Joe CXO<br><span class="sample-note">This site is the sample.</span></div>
     <div class="spacer"></div>
     <div class="private">Private &middot; not for distribution</div>
   </div>
@@ -88,15 +99,20 @@ a.door:focus-visible{outline:2px solid var(--org);outline-offset:2px}
   </header>
 
   <div class="doors">
-    <div class="stack">
-      <a class="door" href="./demo/">
-        <div class="num">01</div>
-        <h2>The console</h2>
-        <p>One night, one alert, one closed report. Run it yourself.</p>
-        <div class="tag">Run the incident</div>
-      </a>
-      <a class="sub-link" href="./demo/film/">Fleet film &middot; brand and web sample &rarr;</a>
-    </div>
+    <a class="door" href="./demo/">
+      <div class="num">01</div>
+      <h2>The console</h2>
+      <p>One night, one alert, one closed report. Run it yourself.</p>
+      <div class="tag">Run the incident</div>
+    </a>
+
+    <a class="door sample" href="./demo/film/">
+      <div class="num">Sample</div>
+      <h2>Fleet film</h2>
+      <p>Brand and web craft, the kind of work your other sites would get. Not
+      the monitoring product.</p>
+      <div class="tag">Watch the film</div>
+    </a>
 
     <a class="door" href="./deck/">
       <div class="num">02</div>
