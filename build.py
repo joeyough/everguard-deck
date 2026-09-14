@@ -47,10 +47,10 @@ deck-stage{display:block;max-width:1600px;margin:0 auto;padding:18px 18px 40px}
 .frame > .slide *{box-sizing:border-box}
 .deck-end{color:rgba(236,236,236,.45);font:500 12px/1.6 Montserrat,system-ui,sans-serif;
   letter-spacing:.16em;text-transform:uppercase;text-align:center;padding:6px 0 26px}
-/* Joey cut the top-left corner motif: its diagonal runs against the angle of
-   the right-hand rules and the page-number slashes, and the mismatch reads as
-   sloppy. Hidden here rather than edited into the export, so the designer's
-   file stays untouched and this is one line to undo. */
+/* Joey cut the top-left corner motif: its diagonal ran against the angle of
+   the right-hand rules and the page-number slashes. As of the 14 Sep export the
+   markup no longer contains it at all, so this rule is now only a guard in case
+   a later export brings it back. */
 .frame > .slide .slash{display:none !important}
 @media (max-width:700px){ deck-stage{padding:10px 10px 28px} .frame{margin-bottom:10px} }
 @media print{

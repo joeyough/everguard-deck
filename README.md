@@ -22,10 +22,19 @@ code. Nothing has been sent to the client yet.
 |---|---|---|
 | 01 | **The deck** | Live at `/deck/`. |
 | 02 | **The agreement** | Scope and terms, the version that goes to a lawyer. Not drafted. |
-| 03 | **The demo** | Interactive, built on her orange RAV4 fleet and her flipped colors, black lettering on orange. Not built. |
+| 03 | **The demo** | Live at `/demo/`. EVERGUARD // ROLL CALL: five beats, the fleet livery flip with a contrast readout, the uniform spec, a live Oahu map and dispatch ticker. |
 
-The page at `web/index.html` already has a card for each, so 02 and 03 have a
-home the moment they exist.
+All three are wired to cards on `web/index.html`.
+
+The demo ships with the design runtime (`support.js`) because its interactions
+depend on it, unlike the deck, which is flattened by `build.py`. Three things
+were changed in the hosted copy and are marked in the file: the close button
+pointed at `#partnership`, an anchor that does not exist anywhere in the page,
+and now returns to the proposal hub; the hover-only instruction became
+"explore the markers" because this opens on phones; and the fixed HUD blocks
+were given room at narrow widths, where the top-left readout collided with the
+clock and the build label collided with the sound toggle. The design file in
+`source/` is untouched.
 
 ## Layout
 

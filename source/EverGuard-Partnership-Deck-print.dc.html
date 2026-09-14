@@ -2,6 +2,9 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta name="omelette-print-source" content="v1789363961253485 EverGuard Partnership Deck.dc.html">
+<meta name="omelette-print-sizing" content="fixed">
+<meta name="omelette-fixed-size" content="1920,1080">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
 </head>
@@ -188,12 +191,19 @@ a { color: var(--org); } a:hover { color: #ff8a33; }
   [data-deck-active] .rec i { animation: blink 1.6s steps(2, start) infinite; }
   @keyframes blink { to { opacity: 0.35; } }
 }
+* { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+@media print {
+  * { animation-delay: -99s !important; animation-duration: .001s !important;
+      animation-iteration-count: 1 !important; animation-fill-mode: both !important;
+      animation-play-state: running !important; transition-duration: 0s !important; }
+}
 </style>
 </helmet>
 <x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%">
 
-  <section class="slide cover" data-label="01 · Cover" data-screen-label="01">
-        <figure class="cover-photo plate" style="margin: 0;">
+  <section data-deck-active class="slide cover" data-label="01 · Cover" data-screen-label="01">
+    <div class="slash"></div>
+    <figure class="cover-photo plate" style="margin: 0;">
       <img src="assets/hawaii-tower.png" alt="Honolulu skyline with Diamond Head at dusk" />
       <div class="scan"></div><div class="shade"></div>
       <div class="vf vf-tr"></div><div class="vf vf-br"></div>
@@ -212,8 +222,9 @@ a { color: var(--org); } a:hover { color: #ff8a33; }
     </div>
   </section>
 
-  <section class="slide content" data-label="02 · The next chapter" data-screen-label="02" style="padding-right: 640px;">
-        <figure class="plate" style="top: 0; right: 0; bottom: 0; width: 560px; margin: 0; clip-path: polygon(130px 0, 100% 0, 100% 100%, 0 100%);">
+  <section data-deck-active class="slide content" data-label="02 · The next chapter" data-screen-label="02" style="padding-right: 640px;">
+    <div class="slash"></div>
+    <figure class="plate" style="top: 0; right: 0; bottom: 0; width: 560px; margin: 0; clip-path: polygon(130px 0, 100% 0, 100% 100%, 0 100%);">
       <img src="assets/next-chapter.png" alt="Business owner overlooking Honolulu" />
       <div class="scan"></div><div class="shade"></div>
       <div class="vf vf-tr"></div><div class="vf vf-br"></div>
@@ -256,8 +267,9 @@ a { color: var(--org); } a:hover { color: #ff8a33; }
     </sc-if>
   </section>
 
-  <section class="slide content" data-label="03 · A broader scope" data-screen-label="03">
-        <div class="ghost" aria-hidden="true">03</div>
+  <section data-deck-active class="slide content" data-label="03 · A broader scope" data-screen-label="03">
+    <div class="slash"></div>
+    <div class="ghost" aria-hidden="true">03</div>
     <div class="head">
       <div class="kick"><span class="kn">03</span><span class="kb"></span><span class="ks">A broader scope</span></div>
       <div class="bstack">
@@ -331,8 +343,9 @@ a { color: var(--org); } a:hover { color: #ff8a33; }
     </sc-if>
   </section>
 
-  <section class="slide content" data-label="04 · The solution approach" data-screen-label="04">
-        <div class="ghost" aria-hidden="true">04</div>
+  <section data-deck-active class="slide content" data-label="04 · The solution approach" data-screen-label="04">
+    <div class="slash"></div>
+    <div class="ghost" aria-hidden="true">04</div>
     <div class="head">
       <div class="kick"><span class="kn">04</span><span class="kb"></span><span class="ks">The solution approach</span></div>
       <div class="brand"><svg class="shield" style="width: 34px; height: 38px;" viewBox="0 0 46 52" aria-hidden="true"><path d="M23 2 42 9v14c0 13-8 22-19 27C12 45 4 36 4 23V9Z" fill="none" stroke="#ff6a00" stroke-width="2.5"/><path d="m16 25 5 5 9-11" fill="none" stroke="#ff6a00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="bm1" style="font-size: 22px;">EVER<b>GUARD</b></div><div class="vr" style="height: 40px;"></div><div class="bp1">Keenan Miller × Joe CXO</div></div>
@@ -377,8 +390,9 @@ a { color: var(--org); } a:hover { color: #ff8a33; }
     </sc-if>
   </section>
 
-  <section class="slide content" data-label="05 · The path forward" data-screen-label="05">
-        <div class="ghost" aria-hidden="true">05</div>
+  <section data-deck-active class="slide content" data-label="05 · The path forward" data-screen-label="05">
+    <div class="slash"></div>
+    <div class="ghost" aria-hidden="true">05</div>
     <div class="head">
       <div class="kick"><span class="kn">05</span><span class="kb"></span><span class="ks">The path forward</span></div>
       <div class="brand"><svg class="shield" style="width: 34px; height: 38px;" viewBox="0 0 46 52" aria-hidden="true"><path d="M23 2 42 9v14c0 13-8 22-19 27C12 45 4 36 4 23V9Z" fill="none" stroke="#ff6a00" stroke-width="2.5"/><path d="m16 25 5 5 9-11" fill="none" stroke="#ff6a00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="bm1" style="font-size: 22px;">EVER<b>GUARD</b></div><div class="vr" style="height: 40px;"></div><div class="bp1">Keenan Miller × Joe CXO</div></div>
@@ -428,8 +442,9 @@ a { color: var(--org); } a:hover { color: #ff8a33; }
     </sc-if>
   </section>
 
-  <section class="slide content" data-label="06 · Our partnership" data-screen-label="06" data-speaker-notes="Off the cuff: one Clydesdale pulls 8,000 lbs. You'd think two pull 16,000 — together they pull 32,000. That's what a team is." style="padding-top: 156px;">
-        <div class="head">
+  <section data-deck-active class="slide content" data-label="06 · Our partnership" data-screen-label="06" data-speaker-notes="Off the cuff: one Clydesdale pulls 8,000 lbs. You'd think two pull 16,000 — together they pull 32,000. That's what a team is." style="padding-top: 156px;">
+    <div class="slash"></div>
+    <div class="head">
       <div class="kick"><span class="kn">06</span><span class="kb"></span><span class="ks">Our partnership</span></div>
       <div class="brand"><svg class="shield" style="width: 34px; height: 38px;" viewBox="0 0 46 52" aria-hidden="true"><path d="M23 2 42 9v14c0 13-8 22-19 27C12 45 4 36 4 23V9Z" fill="none" stroke="#ff6a00" stroke-width="2.5"/><path d="m16 25 5 5 9-11" fill="none" stroke="#ff6a00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="bm1" style="font-size: 22px;">EVER<b>GUARD</b></div><div class="vr" style="height: 40px;"></div><div class="bp1">Keenan Miller × Joe CXO</div></div>
     </div>
@@ -472,8 +487,9 @@ a { color: var(--org); } a:hover { color: #ff8a33; }
     </sc-if>
   </section>
 
-  <section class="slide content" data-label="07 · Partnership options" data-screen-label="07" style="padding-top: 146px;">
-        <div class="head">
+  <section data-deck-active class="slide content" data-label="07 · Partnership options" data-screen-label="07" style="padding-top: 146px;">
+    <div class="slash"></div>
+    <div class="head">
       <div class="kick"><span class="kn">07</span><span class="kb"></span><span class="ks">Partnership options</span></div>
       <div class="brand"><svg class="shield" style="width: 34px; height: 38px;" viewBox="0 0 46 52" aria-hidden="true"><path d="M23 2 42 9v14c0 13-8 22-19 27C12 45 4 36 4 23V9Z" fill="none" stroke="#ff6a00" stroke-width="2.5"/><path d="m16 25 5 5 9-11" fill="none" stroke="#ff6a00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="bm1" style="font-size: 22px;">EVER<b>GUARD</b></div><div class="vr" style="height: 40px;"></div><div class="bp1">Keenan Miller × Joe CXO</div></div>
     </div>
